@@ -33,10 +33,7 @@ export default function App() {
         onOpenAdmission={handleOpenAdmission} 
       />
 
-      {/* Director's Desk */}
-      <DirectorMessage />
-
-      {/* Academics (Nursery to Class 8th) */}
+      {/* Academics (Classes Offered Nursery to Class 8th) */}
       <Academics 
         onOpenAdmission={handleOpenAdmission} 
       />
@@ -45,6 +42,9 @@ export default function App() {
       <Facilities 
         onOpenAdmission={handleOpenAdmission} 
       />
+
+      {/* Director's Desk */}
+      <DirectorMessage />
 
       {/* Contact & WhatsApp Inquiry */}
       <Contact />
