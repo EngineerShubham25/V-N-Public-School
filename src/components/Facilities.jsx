@@ -6,37 +6,37 @@ export default function Facilities({ onOpenAdmission }) {
   const primaryVisualCards = [
     {
       title: 'School Campus & Entrance Gate',
-      image: '/assets/gate_entrance.jpg',
+      image: '/assets/gate_entrance.jpg?v=20260919',
       badge: 'Main Campus',
       description: 'V.N. Public School campus entrance gate with official banner and welcoming flags in Nimuiya Turkauliya.'
     },
     {
       title: 'Book Distribution at School Campus',
-      image: '/assets/book_distribution.jpg',
+      image: '/assets/book_distribution.jpg?v=20260919',
       badge: 'Academic Materials',
       description: 'Annual course book and notebook distribution drives ensuring every student receives complete study material.'
     },
     {
       title: 'Smart Class & Computer Lab',
-      image: '/assets/computer_lab_uniform.jpg',
+      image: '/assets/computer_lab_uniform.jpg?v=20260919',
       badge: 'IT & Digital Literacy',
       description: 'Interactive audio-visual screens and hands-on computer lab practice for digital literacy and coding basics.'
     },
     {
       title: 'Interactive Classroom Learning',
-      image: '/assets/real_classroom.jpg',
+      image: '/assets/real_classroom.jpg?v=20260919',
       badge: 'Interactive Teaching',
       description: 'Engaging interactive classroom environments with experienced teachers encouraging conceptual understanding.'
     },
     {
       title: 'Safe Door-to-Door Van Transport',
-      image: '/assets/omni_van_gate.jpg',
+      image: '/assets/omni_van_gate.jpg?v=20260919',
       badge: 'Van Transport',
       description: 'Official Maruti Omni school van covering Nimuiya, Turkaulia Chowk, Semra, Shankar Saraiya & Motihari routes.'
     },
     {
       title: 'Games, Music, Dance & Assembly',
-      image: '/assets/real_assembly.jpg',
+      image: '/assets/real_assembly.jpg?v=20260919',
       badge: 'Co-Curricular',
       description: 'Daily morning prayer assembly, sports, music, rhymes, creative dance, and physical fitness in open lawn.'
     }

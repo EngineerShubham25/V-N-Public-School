@@ -5,10 +5,10 @@ export default function Hero({ onOpenAdmission }) {
   const [activeImage, setActiveImage] = useState(0);
 
   const heroPhotos = [
-    { src: '/assets/real_classroom.jpg', caption: 'Interactive Classroom Learning & Teacher Guidance' },
-    { src: '/assets/real_assembly.jpg', caption: 'Daily Morning Prayer Assembly at V.N. Public School' },
-    { src: '/assets/omni_van_gate.jpg', caption: 'V.N. Public School Omni Transport Van & Entrance' },
-    { src: '/assets/computer_lab_uniform.jpg', caption: 'Computer Science Lab in Uniform' }
+    { src: '/assets/real_classroom.jpg?v=20260919', caption: 'Interactive Classroom Learning & Teacher Guidance' },
+    { src: '/assets/real_assembly.jpg?v=20260919', caption: 'Daily Morning Prayer Assembly at V.N. Public School' },
+    { src: '/assets/omni_van_gate.jpg?v=20260919', caption: 'V.N. Public School Omni Transport Van & Entrance' },
+    { src: '/assets/computer_lab_uniform.jpg?v=20260919', caption: 'Computer Science Lab in Uniform' }
   ];
 
   return (
