@@ -41,11 +41,6 @@ export default function Contact() {
               Contact V.N. Public School
             </h2>
 
-            <div className="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs text-amber-900 font-medium flex items-center gap-2">
-              <Heart className="w-4 h-4 text-orange-600 shrink-0" />
-              <span>Managed by Lalti Virendra Charitable Trust (लालती वीरेंद्र चैरिटेबल ट्रस्ट)</span>
-            </div>
-
             <p className="text-slate-600 text-sm leading-relaxed">
               Have questions about admissions (Nursery to Class VIII), Sainik/Navodaya coaching, or school van transport? Visit our campus or reach out via phone, email or WhatsApp.
             </p>
@@ -94,19 +89,6 @@ export default function Contact() {
                   <a href="mailto:vnpublicschoolnimuiya99@gmail.com" className="text-xs sm:text-sm font-bold font-mono text-blue-900 hover:underline block mt-0.5 py-0.5">
                     vnpublicschoolnimuiya99@gmail.com
                   </a>
-                </div>
-              </div>
-
-              {/* Director Card */}
-              <div className="bg-slate-50 border border-slate-200 p-4 rounded-2xl flex items-start gap-4 shadow-xs">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 border border-amber-200">
-                  <User className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-slate-900">Director Office</h3>
-                  <p className="text-xs text-slate-700 mt-0.5">
-                    <strong className="text-blue-950">Aadarsh Kumar Raj</strong> (B.Sc., M.Sc., B.Ed.)
-                  </p>
                 </div>
               </div>
 
