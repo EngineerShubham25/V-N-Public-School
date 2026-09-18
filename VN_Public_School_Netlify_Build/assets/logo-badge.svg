@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Top 5 Stars -->
+  <g fill="#1E3A8A" transform="translate(0, 5)">
+    <!-- Star 1 -->
+    <polygon points="135,50 140,65 155,65 143,74 147,88 135,79 123,88 127,74 115,65 130,65"/>
+    <!-- Star 2 -->
+    <polygon points="190,32 195,47 210,47 198,56 202,70 190,61 178,70 182,56 170,47 185,47"/>
+    <!-- Star 3 Center -->
+    <polygon points="250,20 256,38 275,38 260,49 265,67 250,56 235,67 240,49 225,38 244,38"/>
+    <!-- Star 4 -->
+    <polygon points="310,32 315,47 330,47 318,56 322,70 310,61 298,70 302,56 290,47 305,47"/>
+    <!-- Star 5 -->
+    <polygon points="365,50 370,65 385,65 373,74 377,88 365,79 353,88 357,74 345,65 360,65"/>
+  </g>
+
+  <!-- Crown Frame Top Section -->
+  <path d="M 90,110 C 170,120 330,120 410,110 C 420,150 400,200 395,215 L 105,215 C 100,200 80,150 90,110 Z" fill="url(#crownGrad)" stroke="#1E3A8A" stroke-width="4" />
+  
+  <!-- Crown Roof Peak -->
+  <path d="M 90,110 Q 250,50 410,110 Q 250,75 90,110 Z" fill="#EA580C" stroke="#1E3A8A" stroke-width="3" />
+
+  <!-- Sun Rays & Sun -->
+  <g stroke="#FDE047" stroke-width="5" stroke-linecap="round">
+    <line x1="250" y1="180" x2="250" y2="125" />
+    <line x1="250" y1="180" x2="220" y2="135" />
+    <line x1="250" y1="180" x2="280" y2="135" />
+    <line x1="250" y1="180" x2="190" y2="150" />
+    <line x1="250" y1="180" x2="310" y2="150" />
+    <line x1="250" y1="180" x2="170" y2="175" />
+    <line x1="250" y1="180" x2="330" y2="175" />
+  </g>
+  <path d="M 205,185 A 45,45 0 0 1 295,185 Z" fill="#FFFFFF" stroke="#FBBF24" stroke-width="4" />
+
+  <!-- Middle Banner Ribbon -->
+  <path d="M 70,225 L 430,225 L 415,270 L 85,270 Z" fill="#1E3A8A" stroke="#FFFFFF" stroke-width="3" filter="url(#shadow)" />
+  <path d="M 60,220 L 85,247 L 60,275 L 85,270 L 70,225 Z" fill="#0F172A" />
+  <path d="M 440,220 L 415,247 L 440,275 L 415,270 L 430,225 Z" fill="#0F172A" />
+  
+  <text x="250" y="258" font-family="'Cinzel', 'Outfit', Georgia, serif" font-weight="900" font-size="27" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">V.N. PUBLIC SCHOOL</text>
+
+  <!-- Lower Shield Section -->
+  <path d="M 110,285 L 390,285 C 390,400 320,450 250,475 C 180,450 110,400 110,285 Z" fill="url(#shieldGrad)" stroke="#1E3A8A" stroke-width="5" />
+  <path d="M 120,295 L 380,295 C 380,392 315,438 250,462 C 185,438 120,392 120,295 Z" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4"/>
+
+  <!-- Open Book & Pen Nib inside Shield -->
+  <g transform="translate(0, 15)">
+    <!-- Book pages -->
+    <path d="M 250,345 Q 200,310 150,330 L 150,400 Q 200,380 250,410 Q 300,380 350,400 L 350,330 Q 300,310 250,345 Z" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" />
+    <path d="M 250,345 L 250,410" stroke="#1E3A8A" stroke-width="3" />
+    <!-- Book page detail lines -->
+    <path d="M 170,348 Q 205,335 235,350" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <path d="M 170,363 Q 205,350 235,365" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <path d="M 330,348 Q 295,335 265,350" fill="none" stroke="#94A3B8" stroke-width="2" />
+    <path d="M 330,363 Q 295,350 265,365" fill="none" stroke="#94A3B8" stroke-width="2" />
+
+    <!-- Pen Nib in Center -->
+    <path d="M 240,360 L 260,360 L 265,400 L 250,425 L 235,400 Z" fill="#1E3A8A" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="250" cy="385" r="4" fill="#FFFFFF" />
+    <line x1="250" y1="389" x2="250" y2="425" stroke="#FFFFFF" stroke-width="2" />
+  </g>
+
+  <!-- ESTD: 2025 -->
+  <text x="250" y="445" font-family="'Outfit', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">ESTD: 2025</text>
+
+  <!-- Laurel Wreath surrounding Shield -->
+  <g fill="none" stroke="#334155" stroke-width="4" stroke-linecap="round">
+    <!-- Left Leaves -->
+    <path d="M 100,340 C 70,390 100,450 230,488" stroke="#1E3A8A" stroke-width="3" />
+    <path d="M 80,350 Q 65,340 75,330 Q 90,340 80,350 Z" fill="#334155" stroke="none" />
+    <path d="M 72,380 Q 55,370 65,360 Q 82,370 72,380 Z" fill="#334155" stroke="none" />
+    <path d="M 75,410 Q 60,405 70,392 Q 87,400 75,410 Z" fill="#334155" stroke="none" />
+    <path d="M 90,440 Q 75,435 85,420 Q 100,430 90,440 Z" fill="#334155" stroke="none" />
+    <path d="M 120,465 Q 105,465 115,450 Q 130,455 120,465 Z" fill="#334155" stroke="none" />
+
+    <!-- Right Leaves -->
+    <path d="M 400,340 C 430,390 400,450 270,488" stroke="#1E3A8A" stroke-width="3" />
+    <path d="M 420,350 Q 435,340 425,330 Q 410,340 420,350 Z" fill="#334155" stroke="none" />
+    <path d="M 428,380 Q 445,370 435,360 Q 418,370 428,380 Z" fill="#334155" stroke="none" />
+    <path d="M 425,410 Q 440,405 430,392 Q 413,400 425,410 Z" fill="#334155" stroke="none" />
+    <path d="M 410,440 Q 425,435 415,420 Q 400,430 410,440 Z" fill="#334155" stroke="none" />
+    <path d="M 380,465 Q 395,465 385,450 Q 370,455 380,465 Z" fill="#334155" stroke="none" />
+  </g>
+</svg>
