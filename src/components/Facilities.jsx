@@ -131,7 +131,7 @@ export default function Facilities({ onOpenAdmission }) {
                   alt={fac.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 bg-blue-900 text-white px-2.5 py-0.5 rounded text-[11px] font-bold shadow">
+                <span className="absolute top-3 left-3 bg-blue-900 text-white px-2.5 py-0.5 rounded text-xs font-bold shadow">
                   {fac.badge}
                 </span>
               </div>
@@ -151,22 +151,14 @@ export default function Facilities({ onOpenAdmission }) {
         </div>
 
         {/* 2. All 9 School Facilities Grid (Clean, Detailed, Non-repetitive) */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
-            <div>
-              <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
-                Complete Offerings
-              </span>
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-blue-950">
-                All Facilities & Key Programs Included
-              </h3>
-            </div>
-            <button
-              onClick={onOpenAdmission}
-              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-4.5 py-2.5 rounded-xl text-xs shadow-sm transition-all"
-            >
-              Apply for Admission
-            </button>
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
+          <div className="border-b border-slate-200 pb-4 text-center sm:text-left">
+            <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
+              Complete Offerings
+            </span>
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-blue-950">
+              All Facilities & Key Programs Included
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -179,7 +171,7 @@ export default function Facilities({ onOpenAdmission }) {
                       <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0">
                         <Icon className="w-5 h-5 text-blue-800" />
                       </div>
-                      <span className="text-[10px] bg-blue-900 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                      <span className="text-xs bg-blue-900 text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
                         {item.badge}
                       </span>
                     </div>
@@ -191,6 +183,20 @@ export default function Facilities({ onOpenAdmission }) {
               );
             })}
           </div>
+
+          {/* Relocated Bottom Center CTA - Logical Next Step after reviewing facilities */}
+          <div className="pt-4 border-t border-slate-200 text-center flex flex-col items-center justify-center space-y-3">
+            <p className="text-xs text-slate-600 font-medium">
+              Ready to give your child quality education and holistic development at V.N. Public School?
+            </p>
+            <button
+              onClick={onOpenAdmission}
+              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer"
+            >
+              <span>Apply for Admission (2026-27)</span>
+            </button>
+          </div>
+
         </div>
 
       </div>

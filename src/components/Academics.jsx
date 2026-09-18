@@ -49,9 +49,9 @@ export default function Academics({ onOpenAdmission }) {
 
               <button
                 onClick={onOpenAdmission}
-                className="bg-blue-900 hover:bg-blue-950 text-white font-bold px-4 py-2 rounded-xl text-xs w-full text-center mt-2 shadow-sm"
+                className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-4 py-2.5 rounded-xl text-xs w-full text-center mt-3 shadow-xs hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5"
               >
-                Apply for Admission
+                <span>Apply for Admission</span>
               </button>
             </div>
           ))}

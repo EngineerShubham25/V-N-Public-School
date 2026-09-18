@@ -42,7 +42,9 @@ export default function App() {
       />
 
       {/* Facilities & Real Campus Photos */}
-      <Facilities />
+      <Facilities 
+        onOpenAdmission={handleOpenAdmission} 
+      />
 
       {/* Contact & WhatsApp Inquiry */}
       <Contact />

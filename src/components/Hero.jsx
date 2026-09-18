@@ -64,7 +64,7 @@ export default function Hero({ onOpenAdmission }) {
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <button
                 onClick={onOpenAdmission}
-                className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all text-sm flex items-center gap-2"
+                className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all text-sm flex items-center gap-2 cursor-pointer"
               >
                 <GraduationCap className="w-5 h-5 text-white" />
                 <span>Apply Online Admission (2026-27)</span>
@@ -74,7 +74,7 @@ export default function Hero({ onOpenAdmission }) {
                 href="https://wa.me/917562858494?text=Hello%20V.N.%20Public%20School,%20I%20want%20to%20inquire%20about%20admissions."
                 target="_blank"
                 rel="noreferrer"
-                className="bg-blue-900 hover:bg-blue-950 text-white font-bold px-5 py-3.5 rounded-xl shadow-sm transition-all text-sm flex items-center gap-2"
+                className="border-2 border-blue-950 text-blue-950 hover:bg-blue-950 hover:text-white font-bold px-5 py-3.5 rounded-xl transition-all text-sm flex items-center gap-2 bg-white hover:shadow-sm"
               >
                 <span>💬 WhatsApp Inquiry</span>
               </a>

@@ -58,8 +58,8 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Campus Address</h4>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <h3 className="text-sm font-bold text-slate-900">Campus Address</h3>
+                  <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
                     V.N. Public School, Nimuiya, Turkauliya, East Champaran, Bihar - 845437
                   </p>
                 </div>
@@ -71,13 +71,13 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Helpline Numbers</h4>
-                  <div className="flex flex-wrap gap-4 text-xs font-bold font-mono text-blue-900 mt-1">
-                    <a href="tel:7562858494" className="hover:underline">
+                  <h3 className="text-sm font-bold text-slate-900">Helpline Numbers</h3>
+                  <div className="flex flex-wrap gap-4 text-sm font-bold font-mono text-blue-900 mt-1">
+                    <a href="tel:7562858494" className="hover:underline py-0.5">
                       +91 7562858494
                     </a>
                     <span>|</span>
-                    <a href="tel:9523719901" className="hover:underline">
+                    <a href="tel:9523719901" className="hover:underline py-0.5">
                       +91 9523719901
                     </a>
                   </div>
@@ -90,8 +90,8 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Official Email</h4>
-                  <a href="mailto:vnpublicschoolnimuiya99@gmail.com" className="text-xs font-bold font-mono text-blue-900 hover:underline block mt-0.5">
+                  <h3 className="text-sm font-bold text-slate-900">Official Email</h3>
+                  <a href="mailto:vnpublicschoolnimuiya99@gmail.com" className="text-xs sm:text-sm font-bold font-mono text-blue-900 hover:underline block mt-0.5 py-0.5">
                     vnpublicschoolnimuiya99@gmail.com
                   </a>
                 </div>
@@ -103,8 +103,8 @@ export default function Contact() {
                   <User className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Director Office</h4>
-                  <p className="text-xs text-slate-700">
+                  <h3 className="text-sm font-bold text-slate-900">Director Office</h3>
+                  <p className="text-xs text-slate-700 mt-0.5">
                     <strong className="text-blue-950">Aadarsh Kumar Raj</strong> (B.Sc., M.Sc., B.Ed.)
                   </p>
                 </div>
