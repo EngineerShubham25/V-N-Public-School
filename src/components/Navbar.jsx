@@ -16,24 +16,22 @@ export default function Navbar({ onOpenAdmission }) {
   return (
     <div className="w-full font-sans font-medium text-slate-800">
       
-      {/* 1. Top Utility Bar (Padded ~34px, comfortable spacing) */}
+      {/* 1. Top Utility Bar (Clean Location & Helpline) */}
       <div className="bg-blue-950 text-white text-xs font-medium py-2 px-4 border-b border-blue-900 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-3">
           
-          {/* Left Side: Trust Banner */}
-          <div className="flex items-center gap-2 text-slate-100 font-medium">
-            <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400 shrink-0" />
-            <span>Managed by <strong className="text-amber-400 font-semibold">Lalti Virendra Charitable Trust</strong></span>
+          {/* Left Side: Campus Location */}
+          <div className="flex items-center gap-2 text-slate-200 text-xs font-medium">
+            <span className="text-amber-400">📍</span>
+            <span>Nimuiya Turkauliya, East Champaran, Bihar - 845437</span>
           </div>
 
-          {/* Right Side: Email & UDISE */}
-          <div className="hidden md:flex items-center gap-4 text-slate-200 text-xs font-mono shrink-0">
-            <a href="mailto:vnpublicschoolnimuiya99@gmail.com" className="hover:text-amber-400 flex items-center gap-1.5 transition-colors">
-              <Mail className="w-3.5 h-3.5 text-amber-400" />
-              <span>vnpublicschoolnimuiya99@gmail.com</span>
+          {/* Right Side: Direct Helpline */}
+          <div className="flex items-center gap-3 text-slate-200 text-xs font-mono shrink-0">
+            <a href="tel:7562858494" className="hover:text-amber-400 flex items-center gap-1.5 transition-colors font-bold">
+              <Phone className="w-3.5 h-3.5 text-amber-400" />
+              <span>Helpline: +91 7562858494 / 9523719901</span>
             </a>
-            <span className="text-slate-600">|</span>
-            <span className="text-amber-300 font-semibold">UDISE: 10024102835</span>
           </div>
 
         </div>
