@@ -16,28 +16,7 @@ export default function Navbar({ onOpenAdmission }) {
   return (
     <div className="w-full font-sans font-medium text-slate-800">
       
-      {/* 1. Top Utility Bar (Clean Location & Helpline) */}
-      <div className="bg-blue-950 text-white text-xs font-medium py-2 px-4 border-b border-blue-900 overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-3">
-          
-          {/* Left Side: Campus Location */}
-          <div className="flex items-center gap-2 text-slate-200 text-xs font-medium">
-            <span className="text-amber-400">📍</span>
-            <span>Nimuiya Turkauliya, East Champaran, Bihar - 845437</span>
-          </div>
-
-          {/* Right Side: Direct Helpline */}
-          <div className="flex items-center gap-3 text-slate-200 text-xs font-mono shrink-0">
-            <a href="tel:7562858494" className="hover:text-amber-400 flex items-center gap-1.5 transition-colors font-bold">
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <span>Helpline: +91 7562858494 / 9523719901</span>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      {/* 2. Main Navigation Header (Sticky on Scroll) */}
+      {/* Main Navigation Header (Sticky on Scroll) */}
       <header className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b border-slate-200 ${isScrolled ? 'shadow-md py-2.5' : 'py-3.5'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           
