@@ -11,10 +11,10 @@ export default function Facilities({ onOpenAdmission }) {
       description: 'V.N. Public School campus entrance gate with official banner and welcoming flags in Nimuiya Turkauliya.'
     },
     {
-      title: 'Navodaya, Sainik & Netarhat Coaching',
+      title: 'Book Distribution at School Campus',
       image: '/assets/book_distribution.jpg',
-      badge: 'Entrance Coaching',
-      description: 'Special guidance, weekly mock tests, and mental ability preparation for Navodaya, Sainik, Netarhat & Simultala exams.'
+      badge: 'Academic Materials',
+      description: 'Annual course book and notebook distribution drives ensuring every student receives complete study material.'
     },
     {
       title: 'Smart Class & Computer Lab',
@@ -23,10 +23,10 @@ export default function Facilities({ onOpenAdmission }) {
       description: 'Interactive audio-visual screens and hands-on computer lab practice for digital literacy and coding basics.'
     },
     {
-      title: 'Science Laboratory',
+      title: 'Interactive Classroom Learning',
       image: '/assets/real_classroom.jpg',
-      badge: 'Science Experiments',
-      description: 'Equipped science laboratory models and practical experiment kits for Physics, Chemistry, and Biology.'
+      badge: 'Interactive Teaching',
+      description: 'Engaging interactive classroom environments with experienced teachers encouraging conceptual understanding.'
     },
     {
       title: 'Safe Door-to-Door Van Transport',
@@ -124,7 +124,7 @@ export default function Facilities({ onOpenAdmission }) {
         {/* 1. Primary Photo Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
           {primaryVisualCards.map((fac, idx) => (
-            <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col">
+            <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-orange-400 transition-all duration-300 group flex flex-col cursor-pointer">
               <div className="relative h-48 overflow-hidden bg-slate-100">
                 <img
                   src={fac.image}
@@ -138,7 +138,7 @@ export default function Facilities({ onOpenAdmission }) {
 
               <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base font-bold text-blue-950 group-hover:text-blue-700 transition-colors">
+                  <h3 className="text-base font-bold text-blue-950 group-hover:text-orange-600 transition-colors">
                     {fac.title}
                   </h3>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -150,7 +150,7 @@ export default function Facilities({ onOpenAdmission }) {
           ))}
         </div>
 
-        {/* 2. All 9 School Facilities Grid (Clean, Detailed, Non-repetitive) */}
+        {/* 2. All 9 School Facilities Grid (Clean, Detailed, Non-repetitive with Hover Effects) */}
         <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
           <div className="border-b border-slate-200 pb-4 text-center sm:text-left">
             <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
@@ -165,19 +165,19 @@ export default function Facilities({ onOpenAdmission }) {
             {allFacilitiesList.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-slate-50 p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all space-y-2.5 flex flex-col justify-between">
+                <div key={idx} className="bg-slate-50 p-5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 space-y-2.5 flex flex-col justify-between group cursor-pointer">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0">
-                        <Icon className="w-5 h-5 text-blue-800" />
+                      <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-colors">
+                        <Icon className="w-5 h-5 text-blue-800 group-hover:text-white transition-colors" />
                       </div>
-                      <span className="text-xs bg-blue-900 text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                      <span className="text-xs bg-blue-900 group-hover:bg-orange-600 text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider transition-colors">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-blue-950 pt-1">{item.title}</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-sm font-bold text-blue-950 group-hover:text-orange-600 transition-colors pt-1">{item.title}</h4>
+                    <p className="text-xs text-slate-600 group-hover:text-slate-700 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );

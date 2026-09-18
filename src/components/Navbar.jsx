@@ -57,7 +57,7 @@ export default function Navbar({ onOpenAdmission }) {
 
             <button
               onClick={onOpenAdmission}
-              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-5.5 py-2.5 rounded-xl text-xs sm:text-sm shadow-xs hover:shadow-md transition-all flex items-center gap-2 tracking-wide"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-7 py-2.5 min-w-[150px] rounded-xl text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 tracking-wide cursor-pointer text-center font-sans"
             >
               <GraduationCap className="w-4 h-4 text-white shrink-0" />
               <span>Apply Online</span>
