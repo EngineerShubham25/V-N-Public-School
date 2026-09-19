@@ -104,30 +104,32 @@ export default function Facilities({ onOpenAdmission }) {
   ];
 
   return (
-    <section id="facilities" className="relative py-16 sm:py-20 bg-slate-950 text-white border-b border-slate-800 font-sans overflow-hidden">
+    <section id="facilities" className="relative py-16 sm:py-20 bg-slate-100 text-slate-900 border-b border-slate-200 font-sans overflow-hidden">
       
-      {/* Background Image Overlay */}
+      {/* Real School Gate Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none scale-105"
+        className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none scale-105"
         style={{ backgroundImage: `url(${heroBgImg})` }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 pointer-events-none"></div>
+
+      {/* Light Clean Overlay */}
+      <div className="absolute inset-0 bg-slate-900/40 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header with Trust Banner */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           
-          <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-amber-300 shadow-xs">
-            <Heart className="w-3.5 h-3.5 text-orange-400 fill-orange-400" />
+          <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-4 py-1.5 rounded-full text-xs font-black shadow-xs">
+            <Heart className="w-3.5 h-3.5 text-orange-600 fill-orange-600" />
             <span>Run by Lalti Virender Charitable Trust (लालती वीरेंद्र चैरिटेबल ट्रस्ट)</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-heading font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-heading font-black text-white drop-shadow-md tracking-tight">
             School Facilities & Special Programs
           </h2>
 
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-slate-100 font-medium drop-shadow-sm">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
           </p>
         </div>
@@ -135,24 +137,24 @@ export default function Facilities({ onOpenAdmission }) {
         {/* 1. Primary Photo Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
           {primaryVisualCards.map((fac, idx) => (
-            <div key={idx} className="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 group flex flex-col cursor-pointer backdrop-blur-xs">
-              <div className="relative h-48 overflow-hidden bg-slate-950">
+            <div key={idx} className="bg-white/95 border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-orange-500 transition-all duration-300 group flex flex-col cursor-pointer backdrop-blur-xs">
+              <div className="relative h-48 overflow-hidden bg-slate-100">
                 <img
                   src={fac.image}
                   alt={fac.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 bg-amber-500 text-slate-950 px-2.5 py-0.5 rounded text-xs font-bold shadow">
+                <span className="absolute top-3 left-3 bg-blue-900 text-white px-2.5 py-0.5 rounded text-xs font-bold shadow">
                   {fac.badge}
                 </span>
               </div>
 
               <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-base font-bold text-blue-950 group-hover:text-orange-600 transition-colors">
                     {fac.title}
                   </h3>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                     {fac.description}
                   </p>
                 </div>
@@ -162,12 +164,12 @@ export default function Facilities({ onOpenAdmission }) {
         </div>
 
         {/* 2. All 9 School Facilities Grid (Clean, Detailed, Non-repetitive with Hover Effects) */}
-        <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8 backdrop-blur-xs">
-          <div className="border-b border-slate-800 pb-4 text-center sm:text-left">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-0.5">
+        <div className="bg-white/95 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg space-y-8 backdrop-blur-xs">
+          <div className="border-b border-slate-200 pb-4 text-center sm:text-left">
+            <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
               Complete Offerings
             </span>
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-blue-950">
               All Facilities & Key Programs Included
             </h3>
           </div>
@@ -176,19 +178,19 @@ export default function Facilities({ onOpenAdmission }) {
             {allFacilitiesList.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 hover:border-amber-400 hover:bg-slate-800/90 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 space-y-2.5 flex flex-col justify-between group cursor-pointer">
+                <div key={idx} className="bg-slate-50 p-5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 space-y-2.5 flex flex-col justify-between group cursor-pointer">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center border border-amber-400/30 shrink-0 group-hover:bg-amber-400 group-hover:text-slate-950 transition-colors">
-                        <Icon className="w-5 h-5 text-amber-300 group-hover:text-slate-950 transition-colors" />
+                      <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-colors">
+                        <Icon className="w-5 h-5 text-blue-800 group-hover:text-white transition-colors" />
                       </div>
-                      <span className="text-xs bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-300 px-2.5 py-0.5 rounded font-bold uppercase tracking-wider transition-colors">
+                      <span className="text-xs bg-blue-900 group-hover:bg-orange-600 text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider transition-colors">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors pt-1">{item.title}</h4>
-                    <p className="text-xs text-slate-300 group-hover:text-slate-200 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-sm font-bold text-blue-950 group-hover:text-orange-600 transition-colors pt-1">{item.title}</h4>
+                    <p className="text-xs text-slate-600 group-hover:text-slate-700 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );
@@ -196,8 +198,8 @@ export default function Facilities({ onOpenAdmission }) {
           </div>
 
           {/* Relocated Bottom Center CTA - Logical Next Step after reviewing facilities */}
-          <div className="pt-4 border-t border-slate-800 text-center flex flex-col items-center justify-center space-y-3">
-            <p className="text-xs text-slate-300 font-medium">
+          <div className="pt-4 border-t border-slate-200 text-center flex flex-col items-center justify-center space-y-3">
+            <p className="text-xs text-slate-600 font-medium">
               Ready to give your child quality education and holistic development at V.N. Public School?
             </p>
             <button
@@ -214,4 +216,5 @@ export default function Facilities({ onOpenAdmission }) {
     </section>
   );
 }
+
 

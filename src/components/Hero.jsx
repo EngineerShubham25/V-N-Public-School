@@ -15,16 +15,16 @@ export default function Hero({ onOpenAdmission }) {
   ];
 
   return (
-    <section id="about" className="relative bg-slate-950 text-white pt-12 pb-20 border-b border-slate-800 font-sans overflow-hidden">
+    <section id="about" className="relative bg-slate-900 text-white pt-12 pb-20 border-b border-slate-800 font-sans overflow-hidden">
       
-      {/* Real School Gate Background Image Overlay */}
+      {/* Real School Gate Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 scale-105 pointer-events-none transition-transform duration-1000"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 scale-105 pointer-events-none transition-transform duration-1000"
         style={{ backgroundImage: `url(${heroBgImg})` }}
       ></div>
 
-      {/* Dark Navy Gradient Blend */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-blue-950/80 pointer-events-none"></div>
+      {/* Subtle Readable Contrast Mask */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-950/50 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
