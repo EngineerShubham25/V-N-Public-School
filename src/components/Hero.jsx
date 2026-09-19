@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GraduationCap, MapPin, Sparkles, CheckCircle2, Heart } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
+import heroBgImg from '../assets/hero_bg.jpg';
 
 export default function Hero({ onOpenAdmission }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -14,51 +15,61 @@ export default function Hero({ onOpenAdmission }) {
   ];
 
   return (
-    <section id="about" className="relative bg-white pt-10 pb-20 border-b border-slate-200 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative bg-slate-950 text-white pt-12 pb-20 border-b border-slate-800 font-sans overflow-hidden">
+      
+      {/* Real School Gate Background Image Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 scale-105 pointer-events-none transition-transform duration-1000"
+        style={{ backgroundImage: `url(${heroBgImg})` }}
+      ></div>
+
+      {/* Dark Navy Gradient Blend */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-blue-950/80 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: School Info */}
           <div className="lg:col-span-6 space-y-6">
             
             <div className="inline-flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full text-xs font-bold text-amber-950">
-                <Heart className="w-3.5 h-3.5 text-orange-600 fill-orange-600" />
+              <span className="inline-flex items-center gap-1.5 bg-amber-500/20 border border-amber-400/40 px-3 py-1 rounded-full text-xs font-bold text-amber-300">
+                <Heart className="w-3.5 h-3.5 text-orange-400 fill-orange-400" />
                 <span>Run by Lalti Virender Charitable Trust</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full text-xs font-bold text-blue-900">
-                <MapPin className="w-3.5 h-3.5 text-blue-700" />
+              <span className="inline-flex items-center gap-1.5 bg-blue-500/20 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-bold text-blue-200">
+                <MapPin className="w-3.5 h-3.5 text-blue-400" />
                 <span>Nimuiya Turkauliya, East Champaran</span>
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-heading font-black text-blue-950 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
               Welcome to <br />
-              <span className="text-blue-900">V.N. Public School</span>
+              <span className="text-amber-400">V.N. Public School</span>
             </h1>
 
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-base text-slate-300 leading-relaxed font-normal">
               Quality English Medium CBSE pattern education (Nursery to Class 8th) with specialized Navodaya & Sainik exam coaching, smart classes, and safe van transport.
             </p>
 
             {/* Feature Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-800 font-semibold pt-1">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-200 font-medium pt-1">
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Nursery to Class 8th (CBSE)</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
-                <span>Navodaya / Sainik Exam Coaching</span>
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Navodaya / Sainik Coaching</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
-                <span>Smart Class & Science Lab</span>
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Smart Class & Computer Lab</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
-                <span>Director: Aadarsh Kumar Raj (B.Sc, M.Sc, B.Ed)</span>
+              <div className="flex items-center gap-2 bg-slate-900/60 p-2 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Director: Aadarsh Kumar Raj</span>
               </div>
             </div>
 
