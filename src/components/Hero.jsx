@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GraduationCap, MapPin, Sparkles, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { GraduationCap, Sparkles, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
 
@@ -37,11 +37,6 @@ export default function Hero({ onOpenAdmission }) {
           {/* Left Column: School Info */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-6">
             
-            <div className="inline-flex items-center gap-1.5 bg-blue-100 border border-blue-200 px-3 py-1 rounded-full text-xs font-bold text-blue-900">
-              <MapPin className="w-3.5 h-3.5 text-blue-700" />
-              <span>Nimuiya Turkauliya, East Champaran</span>
-            </div>
-
             {/* Typography Hierarchy: "Welcome to" smaller, "V.N. Public School" larger & prominent */}
             <div>
               <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 mb-1">

@@ -1,9 +1,12 @@
-import React from 'react';
-import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music } from 'lucide-react';
+import React, { useState } from 'react';
+import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music, ChevronDown, ChevronUp } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
 
 export default function Facilities({ onOpenAdmission }) {
+  const [showAllFacilities, setShowAllFacilities] = useState(false);
+  const [activeFacilityIndex, setActiveFacilityIndex] = useState(null);
+
   // 6 Primary Visual Feature Cards with Real Photos
   const primaryVisualCards = [
     {
@@ -102,6 +105,8 @@ export default function Facilities({ onOpenAdmission }) {
     }
   ];
 
+  const displayedMobileFacilities = showAllFacilities ? allFacilitiesList : allFacilitiesList.slice(0, 3);
+
   return (
     <section id="facilities" className="py-12 sm:py-16 bg-slate-50 border-b border-slate-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,12 +120,9 @@ export default function Facilities({ onOpenAdmission }) {
           <p className="text-xs sm:text-sm text-slate-600">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
           </p>
-          <p className="text-xs text-slate-500 sm:hidden">
-            👈 Swipe horizontally to view campus photos 👉
-          </p>
         </div>
 
-        {/* 1. Primary Photo Cards Horizontal Carousel on Mobile (Right -> Left Swipe) & Grid on Desktop */}
+        {/* 1. Primary Photo Cards Horizontal Carousel on Mobile & Grid on Desktop */}
         <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 pb-4 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
           {primaryVisualCards.map((fac, idx) => (
             <div 
@@ -152,8 +154,8 @@ export default function Facilities({ onOpenAdmission }) {
           ))}
         </div>
 
-        {/* 2. All 9 School Facilities Grid (Clean, Scannable & Compact) */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-xs space-y-6">
+        {/* 2. All 9 School Facilities Section (Mobile: 3 Cards Initial + View More/Less & Tap-to-Expand, Desktop: All 9 Grid) */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-4 sm:p-8 shadow-xs space-y-6">
           <div className="border-b border-slate-200 pb-3 text-center sm:text-left">
             <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
               Complete Offerings
@@ -163,11 +165,15 @@ export default function Facilities({ onOpenAdmission }) {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* Desktop View: All 9 Facilities Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {allFacilitiesList.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white transition-all space-y-2 flex flex-col justify-between group">
+                <div 
+                  key={idx} 
+                  className="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white transition-all space-y-2 flex flex-col justify-between group"
+                >
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
                       <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-colors">
@@ -184,6 +190,59 @@ export default function Facilities({ onOpenAdmission }) {
                 </div>
               );
             })}
+          </div>
+
+          {/* Mobile View: First 3 Cards initially (or 9 when expanded) with Tap-to-Expand Accordion */}
+          <div className="sm:hidden space-y-3">
+            <div className="space-y-3">
+              {displayedMobileFacilities.map((item, idx) => {
+                const Icon = item.icon;
+                const isActive = activeFacilityIndex === idx;
+                return (
+                  <div 
+                    key={idx}
+                    onClick={() => setActiveFacilityIndex(isActive ? null : idx)}
+                    className={`p-4 rounded-2xl border transition-all cursor-pointer space-y-2 ${
+                      isActive 
+                        ? 'border-orange-500 bg-orange-50/40 ring-2 ring-orange-500/20 shadow-md' 
+                        : 'border-slate-200 bg-slate-50 hover:bg-white shadow-xs'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 ${
+                          isActive ? 'bg-orange-600 text-white border-orange-600' : 'bg-blue-100 text-blue-900 border-blue-200'
+                        }`}>
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <h4 className="text-xs font-bold text-blue-950 pr-2">{item.title}</h4>
+                      </div>
+
+                      <span className={`text-[9px] px-2 py-0.5 rounded font-bold uppercase tracking-wider shrink-0 ${
+                        isActive ? 'bg-orange-600 text-white' : 'bg-blue-900 text-white'
+                      }`}>
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    <p className="text-[11px] text-slate-600 leading-relaxed pt-1 border-t border-slate-200/60">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Mobile View More / View Less Facilities Toggle Button */}
+            <div className="pt-2">
+              <button
+                onClick={() => setShowAllFacilities(!showAllFacilities)}
+                className="w-full bg-blue-950 hover:bg-blue-900 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+              >
+                <span>{showAllFacilities ? 'View Less Facilities' : 'View More Facilities'}</span>
+                {showAllFacilities ? <ChevronUp className="w-4 h-4 text-orange-400" /> : <ChevronDown className="w-4 h-4 text-orange-400" />}
+              </button>
+            </div>
           </div>
 
           {/* Bottom Center CTA */}
@@ -205,6 +264,7 @@ export default function Facilities({ onOpenAdmission }) {
     </section>
   );
 }
+
 
 
 
