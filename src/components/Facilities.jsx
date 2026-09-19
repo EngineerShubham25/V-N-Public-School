@@ -1,10 +1,10 @@
 import React from 'react';
-import { Monitor, Bus, BookOpen, Sparkles, Trophy, Music, Award, Users, HeartHandshake, ShieldCheck, Dumbbell, Globe, FlaskConical, Target, Heart } from 'lucide-react';
+import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
 
 export default function Facilities({ onOpenAdmission }) {
-  // 6 Primary Visual Feature Cards with Real Photos (No Repetitions)
+  // 6 Primary Visual Feature Cards with Real Photos
   const primaryVisualCards = [
     {
       title: 'School Campus & Entrance Gate',
@@ -44,7 +44,7 @@ export default function Facilities({ onOpenAdmission }) {
     }
   ];
 
-  // Complete List of All 9 Facilities (No duplicates, 100% complete)
+  // Concise & Compact 9 Facilities List (Genuine Data Preserved)
   const allFacilitiesList = [
     {
       icon: Target,
@@ -103,47 +103,47 @@ export default function Facilities({ onOpenAdmission }) {
   ];
 
   return (
-    <section id="facilities" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 font-sans">
+    <section id="facilities" className="py-12 sm:py-16 bg-slate-50 border-b border-slate-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with Trust Banner */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          
-          <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 px-3.5 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs">
-            <Heart className="w-3.5 h-3.5 text-orange-600 fill-orange-600" />
-            <span>Run by Lalti Virender Charitable Trust (लालती वीरेंद्र चैरिटेबल ट्रस्ट)</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2">
+          <h2 className="text-2xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight">
             School Facilities & Special Programs
           </h2>
 
-          <p className="text-sm text-slate-600">
+          <p className="text-xs sm:text-sm text-slate-600">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
+          </p>
+          <p className="text-xs text-slate-500 sm:hidden">
+            👈 Swipe horizontally to view campus photos 👉
           </p>
         </div>
 
-        {/* 1. Primary Photo Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+        {/* 1. Primary Photo Cards Horizontal Carousel on Mobile (Right -> Left Swipe) & Grid on Desktop */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 pb-4 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
           {primaryVisualCards.map((fac, idx) => (
-            <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-orange-400 transition-all duration-300 group flex flex-col cursor-pointer">
-              <div className="relative h-48 overflow-hidden bg-slate-100">
+            <div 
+              key={idx} 
+              className="w-[84%] sm:w-[320px] shrink-0 snap-center md:w-auto bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 group flex flex-col"
+            >
+              <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-100">
                 <img
                   src={fac.image}
                   alt={fac.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 bg-blue-900 text-white px-2.5 py-0.5 rounded text-xs font-bold shadow">
+                <span className="absolute top-2.5 left-2.5 bg-blue-900 text-white px-2 py-0.5 rounded text-[10px] font-bold shadow-xs">
                   {fac.badge}
                 </span>
               </div>
 
-              <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
+              <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base font-bold text-blue-950 group-hover:text-orange-600 transition-colors">
+                  <h3 className="text-sm sm:text-base font-bold text-blue-950 group-hover:text-orange-600 transition-colors">
                     {fac.title}
                   </h3>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed mt-1">
                     {fac.description}
                   </p>
                 </div>
@@ -152,48 +152,48 @@ export default function Facilities({ onOpenAdmission }) {
           ))}
         </div>
 
-        {/* 2. All 9 School Facilities Grid (Clean, Detailed, Non-repetitive with Hover Effects) */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
-          <div className="border-b border-slate-200 pb-4 text-center sm:text-left">
-            <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
+        {/* 2. All 9 School Facilities Grid (Clean, Scannable & Compact) */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-xs space-y-6">
+          <div className="border-b border-slate-200 pb-3 text-center sm:text-left">
+            <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
               Complete Offerings
             </span>
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-blue-950">
+            <h3 className="text-lg sm:text-2xl font-heading font-black text-blue-950">
               All Facilities & Key Programs Included
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {allFacilitiesList.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-slate-50 p-5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 space-y-2.5 flex flex-col justify-between group cursor-pointer">
-                  <div className="space-y-2">
+                <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white transition-all space-y-2 flex flex-col justify-between group">
+                  <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-colors">
-                        <Icon className="w-5 h-5 text-blue-800 group-hover:text-white transition-colors" />
+                      <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                        <Icon className="w-4 h-4 text-blue-800 group-hover:text-white transition-colors" />
                       </div>
-                      <span className="text-xs bg-blue-900 group-hover:bg-orange-600 text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider transition-colors">
+                      <span className="text-[10px] bg-blue-900 group-hover:bg-orange-600 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider transition-colors">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-blue-950 group-hover:text-orange-600 transition-colors pt-1">{item.title}</h4>
-                    <p className="text-xs text-slate-600 group-hover:text-slate-700 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-xs sm:text-sm font-bold text-blue-950 group-hover:text-orange-600 transition-colors pt-0.5">{item.title}</h4>
+                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Relocated Bottom Center CTA - Logical Next Step after reviewing facilities */}
-          <div className="pt-4 border-t border-slate-200 text-center flex flex-col items-center justify-center space-y-3">
+          {/* Bottom Center CTA */}
+          <div className="pt-3 border-t border-slate-200 text-center flex flex-col items-center justify-center space-y-2">
             <p className="text-xs text-slate-600 font-medium">
               Ready to give your child quality education and holistic development at V.N. Public School?
             </p>
             <button
               onClick={onOpenAdmission}
-              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer"
             >
               <span>Apply for Admission (2026-27)</span>
             </button>
@@ -205,6 +205,7 @@ export default function Facilities({ onOpenAdmission }) {
     </section>
   );
 }
+
 
 
 
