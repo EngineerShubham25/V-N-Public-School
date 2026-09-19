@@ -15,60 +15,65 @@ export default function Hero({ onOpenAdmission }) {
   ];
 
   return (
-    <section id="about" className="relative pt-12 pb-20 border-b border-slate-200 font-sans overflow-hidden min-h-[600px] flex items-center">
+    <section id="about" className="relative pt-12 pb-20 border-b border-slate-800 font-sans overflow-hidden min-h-[600px] flex items-center w-full max-w-full bg-slate-950">
       
-      {/* Real School Gate Background Image (Full Color & Full Clarity) */}
+      {/* Full Cover School Building Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-        style={{ backgroundImage: `url(${heroBgImg})` }}
+        className="absolute inset-0 w-full h-full bg-cover bg-center sm:bg-center bg-no-repeat pointer-events-none scale-105 transition-transform duration-1000"
+        style={{ 
+          backgroundImage: `url(${heroBgImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       ></div>
 
-      {/* Soft Subtle Light Vignette for readability (No Blue Color) */}
-      <div className="absolute inset-0 bg-slate-900/10 pointer-events-none"></div>
+      {/* Subtle Dark/Blue Transparent Overlay for Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-blue-950/70 to-slate-950/50 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: School Info Card */}
-          <div className="lg:col-span-6 bg-white/92 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/60 shadow-2xl space-y-6">
+          <div className="lg:col-span-6 bg-slate-950/75 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-800/80 shadow-2xl space-y-6">
             
             <div className="inline-flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full text-xs font-bold text-amber-950">
-                <Heart className="w-3.5 h-3.5 text-orange-600 fill-orange-600" />
+              <span className="inline-flex items-center gap-1.5 bg-amber-500/20 border border-amber-400/40 px-3 py-1 rounded-full text-xs font-bold text-amber-300">
+                <Heart className="w-3.5 h-3.5 text-orange-400 fill-orange-400" />
                 <span>Run by Lalti Virender Charitable Trust</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 bg-blue-100 border border-blue-300 px-3 py-1 rounded-full text-xs font-bold text-blue-950">
-                <MapPin className="w-3.5 h-3.5 text-blue-700" />
+              <span className="inline-flex items-center gap-1.5 bg-blue-500/20 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-bold text-blue-200">
+                <MapPin className="w-3.5 h-3.5 text-blue-400" />
                 <span>Nimuiya Turkauliya, East Champaran</span>
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-heading font-black text-blue-950 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
               Welcome to <br />
-              <span className="text-orange-600">V.N. Public School</span>
+              <span className="text-amber-400">V.N. Public School</span>
             </h1>
 
-            <p className="text-base text-slate-700 leading-relaxed font-medium">
+            <p className="text-base text-slate-200 leading-relaxed font-normal">
               Quality English Medium CBSE pattern education (Nursery to Class 8th) with specialized Navodaya & Sainik exam coaching, smart classes, and safe van transport.
             </p>
 
             {/* Feature Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-800 font-semibold pt-1">
-              <div className="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-200 font-medium pt-1">
+              <div className="flex items-center gap-2 bg-slate-900/70 p-2.5 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Nursery to Class 8th (CBSE)</span>
               </div>
-              <div className="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 bg-slate-900/70 p-2.5 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Navodaya / Sainik Coaching</span>
               </div>
-              <div className="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 bg-slate-900/70 p-2.5 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Smart Class & Computer Lab</span>
               </div>
-              <div className="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 bg-slate-900/70 p-2.5 rounded-xl border border-slate-800">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Director: Aadarsh Kumar Raj</span>
               </div>
             </div>
@@ -100,10 +105,10 @@ export default function Hero({ onOpenAdmission }) {
 
           {/* Right Column: Photo Showcase */}
           <div className="lg:col-span-6">
-            <div className="bg-white/92 backdrop-blur-md border border-white/60 p-4 rounded-3xl shadow-2xl space-y-4">
+            <div className="bg-slate-950/75 backdrop-blur-md border border-slate-800/80 p-4 rounded-3xl shadow-2xl space-y-4">
               
               {/* Main Photo Display */}
-              <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden shadow-sm bg-slate-200">
+              <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden shadow-sm bg-slate-900">
                 <img
                   src={heroPhotos[activeImage].src}
                   alt={heroPhotos[activeImage].caption}
@@ -124,7 +129,7 @@ export default function Hero({ onOpenAdmission }) {
                     key={idx}
                     onClick={() => setActiveImage(idx)}
                     className={`relative h-16 sm:h-20 rounded-xl overflow-hidden border-2 transition-all ${
-                      activeImage === idx ? 'border-orange-600 ring-2 ring-orange-500/30 scale-105' : 'border-slate-300 opacity-70 hover:opacity-100'
+                      activeImage === idx ? 'border-amber-400 ring-2 ring-amber-500/30 scale-105' : 'border-slate-700 opacity-70 hover:opacity-100'
                     }`}
                   >
                     <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" />

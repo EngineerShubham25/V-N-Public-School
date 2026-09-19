@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950 overflow-x-hidden w-full max-w-full">
       {/* Navigation Bar */}
       <Navbar 
         onOpenAdmission={handleOpenAdmission} 
