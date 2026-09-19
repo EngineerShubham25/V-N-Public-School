@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
-import { Phone, MapPin, Mail, Send, CheckCircle2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Phone, MapPin, Mail, Send, CheckCircle2, User, Heart } from 'lucide-react';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', query: '' });
+  const [mapMounted, setMapMounted] = useState(false);
+
+  useEffect(() => {
+    setMapMounted(true);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-white border-b border-slate-200 font-sans">
+    <section id="contact" className="py-16 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -41,6 +46,11 @@ export default function Contact() {
               Contact V.N. Public School
             </h2>
 
+            <div className="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs text-amber-900 font-medium flex items-center gap-2">
+              <Heart className="w-4 h-4 text-orange-600 shrink-0" />
+              <span>Managed by Lalti Virendra Charitable Trust (लालती वीरेंद्र चैरिटेबल ट्रस्ट)</span>
+            </div>
+
             <p className="text-slate-600 text-sm leading-relaxed">
               Have questions about admissions (Nursery to Class VIII), Sainik/Navodaya coaching, or school van transport? Visit our campus or reach out via phone, email or WhatsApp.
             </p>
@@ -53,8 +63,8 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">Campus Address</h3>
-                  <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                  <h4 className="text-sm font-bold text-slate-900">Campus Address</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">
                     V.N. Public School, Nimuiya, Turkauliya, East Champaran, Bihar - 845437
                   </p>
                 </div>
@@ -66,13 +76,13 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">Helpline Numbers</h3>
-                  <div className="flex flex-wrap gap-4 text-sm font-bold font-mono text-blue-900 mt-1">
-                    <a href="tel:7562858494" className="hover:underline py-0.5">
+                  <h4 className="text-sm font-bold text-slate-900">Helpline Numbers</h4>
+                  <div className="flex flex-wrap gap-4 text-xs font-bold font-mono text-blue-900 mt-1">
+                    <a href="tel:7562858494" className="hover:underline">
                       +91 7562858494
                     </a>
                     <span>|</span>
-                    <a href="tel:9523719901" className="hover:underline py-0.5">
+                    <a href="tel:9523719901" className="hover:underline">
                       +91 9523719901
                     </a>
                   </div>
@@ -85,10 +95,23 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">Official Email</h3>
-                  <a href="mailto:vnpublicschoolnimuiya99@gmail.com" className="text-xs sm:text-sm font-bold font-mono text-blue-900 hover:underline block mt-0.5 py-0.5">
+                  <h4 className="text-sm font-bold text-slate-900">Official Email</h4>
+                  <a href="mailto:vnpublicschoolnimuiya99@gmail.com" className="text-xs font-bold font-mono text-blue-900 hover:underline block mt-0.5">
                     vnpublicschoolnimuiya99@gmail.com
                   </a>
+                </div>
+              </div>
+
+              {/* Director Card */}
+              <div className="bg-slate-50 border border-slate-200 p-4 rounded-2xl flex items-start gap-4 shadow-xs">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 border border-amber-200">
+                  <User className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900">Director Office</h4>
+                  <p className="text-xs text-slate-700">
+                    <strong className="text-blue-950">Aadarsh Kumar Raj</strong> (B.Sc., M.Sc., B.Ed.)
+                  </p>
                 </div>
               </div>
 
@@ -164,10 +187,29 @@ export default function Contact() {
 
         </div>
 
+        {/* Campus Google Maps Location Section */}
+        <div className="mt-10 bg-slate-50 border border-slate-200 p-4 sm:p-6 rounded-3xl shadow-sm space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-blue-700" />
+              <h3 className="text-base font-bold text-blue-950">V.N. Public School Location Map</h3>
+            </div>
+            <span className="text-xs text-slate-500 font-mono">Nimuiya, Turkauliya, East Champaran (845437)</span>
+          </div>
+
+          <div className="w-full h-64 sm:h-80 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+            {mapMounted && (
+              <iframe
+                title="V.N. Public School Location Map"
+                src="https://maps.google.com/maps?q=V.N.+Public+School+Nimuiya+Turkauliya+East+Champaran+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                allowFullScreen
+              />
+            )}
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
-
-
-

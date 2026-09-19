@@ -17,12 +17,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950 overflow-x-hidden w-full max-w-full">
-      {/* Unified Sticky Navigation Header & Notice Board Ticker */}
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950 overflow-x-clip">
+      {/* Sticky Combined Header: Navbar + Notice Ticker */}
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs">
         <Navbar 
           onOpenAdmission={handleOpenAdmission} 
         />
+
         <NoticeTicker 
           onOpenAdmission={handleOpenAdmission} 
         />
@@ -33,18 +34,16 @@ export default function App() {
         onOpenAdmission={handleOpenAdmission} 
       />
 
-      {/* Academics (Classes Offered Nursery to Class 8th) */}
+      {/* Director's Desk */}
+      <DirectorMessage />
+
+      {/* Academics (Nursery to Class 8th) */}
       <Academics 
         onOpenAdmission={handleOpenAdmission} 
       />
 
       {/* Facilities & Real Campus Photos */}
-      <Facilities 
-        onOpenAdmission={handleOpenAdmission} 
-      />
-
-      {/* Director's Desk */}
-      <DirectorMessage />
+      <Facilities />
 
       {/* Contact & WhatsApp Inquiry */}
       <Contact />
