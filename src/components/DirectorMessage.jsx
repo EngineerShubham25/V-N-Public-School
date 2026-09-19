@@ -1,35 +1,24 @@
 import React from 'react';
 import { Quote, Phone, CheckCircle2, HeartHandshake, ShieldCheck, Award, Sparkles, BookOpen, Compass } from 'lucide-react';
-import realAssemblyImg from '../assets/real_assembly.jpg';
 
 export default function DirectorMessage() {
   return (
-    <section id="director" className="relative py-16 sm:py-20 bg-slate-100 text-slate-900 border-b border-slate-200 font-sans overflow-hidden">
-      
-      {/* Real School Assembly Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-35 pointer-events-none scale-105"
-        style={{ backgroundImage: `url(${realAssemblyImg})` }}
-      ></div>
-
-      {/* Light Clean Overlay */}
-      <div className="absolute inset-0 bg-slate-900/40 pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="director" className="py-16 sm:py-20 bg-white border-b border-slate-200 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-2">
-          <h2 className="text-2xl sm:text-4xl font-heading font-black text-white drop-shadow-md tracking-tight uppercase">
+          <h2 className="text-2xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight uppercase">
             DIRECTOR’S DESK
           </h2>
-          <div className="inline-flex items-center gap-1.5 bg-amber-400 text-slate-950 px-4 py-1.5 rounded-full text-xs font-black shadow-xs">
-            <Quote className="w-3.5 h-3.5 text-slate-950" />
+          <div className="inline-flex items-center gap-1.5 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full text-xs font-bold text-blue-900">
+            <Quote className="w-3.5 h-3.5 text-blue-700" />
             <span>Leadership & Vision</span>
           </div>
         </div>
 
-        {/* Responsive Grid Layout Container */}
-        <div className="bg-white/95 border border-slate-200 rounded-3xl p-5 sm:p-10 shadow-xl backdrop-blur-xs">
+        {/* Recommended Responsive Grid Layout */}
+        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-5 sm:p-10 shadow-sm">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
@@ -43,7 +32,7 @@ export default function DirectorMessage() {
                 />
                 <div className="bg-blue-900 text-white p-4 text-center">
                   <h3 className="text-lg font-heading font-black">Aadarsh Kumar Raj</h3>
-                  <p className="text-xs text-amber-400 font-semibold font-mono mt-0.5">
+                  <p className="text-xs text-orange-400 font-semibold font-mono mt-0.5">
                     Director (B.Sc., M.Sc., B.Ed) • ESTD 2025
                   </p>
                 </div>
@@ -85,7 +74,7 @@ export default function DirectorMessage() {
               <div className="space-y-4 text-sm text-slate-700 pt-2">
                 
                 {/* 1. Our Vision */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <Compass className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Our Vision</span>
@@ -96,7 +85,7 @@ export default function DirectorMessage() {
                 </div>
 
                 {/* 2. Academic Excellence & Entrance Exam Prep */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <BookOpen className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Academic Excellence & Special Exam Coaching</span>
@@ -107,7 +96,7 @@ export default function DirectorMessage() {
                 </div>
 
                 {/* 3. Safety & Well-being */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Safety & Well-being</span>
@@ -118,7 +107,7 @@ export default function DirectorMessage() {
                 </div>
 
                 {/* 4. Holistic Development */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Holistic Development</span>
@@ -129,7 +118,7 @@ export default function DirectorMessage() {
                 </div>
 
                 {/* 5. Technology & Future-Ready Learning */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <Award className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Technology & Future-Ready Learning</span>
@@ -140,7 +129,7 @@ export default function DirectorMessage() {
                 </div>
 
                 {/* 6. Values & Character Building */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Values & Character Building</span>
@@ -151,7 +140,7 @@ export default function DirectorMessage() {
                 </div>
 
                 {/* 7. Parent–School Partnership */}
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <HeartHandshake className="w-4 h-4 text-blue-700 shrink-0" />
                     <span>Parent–School Partnership</span>
@@ -164,12 +153,12 @@ export default function DirectorMessage() {
               </div>
 
               {/* Closing Quote Box */}
-              <div className="bg-blue-900 text-white p-5 sm:p-6 rounded-2xl space-y-3 mt-6 shadow-md relative overflow-hidden">
+              <div className="bg-blue-950 text-white p-5 sm:p-6 rounded-2xl space-y-3 mt-6 shadow-md relative overflow-hidden">
                 <Quote className="w-8 h-8 text-orange-400 opacity-30 absolute right-4 bottom-4" />
                 <p className="text-xs sm:text-sm font-medium italic text-slate-100 leading-relaxed">
                   “Our mission is simple — to provide every child with the knowledge to succeed, the values to lead, and the confidence to dream.”
                 </p>
-                <div className="border-t border-blue-800 pt-3">
+                <div className="border-t border-blue-900 pt-3">
                   <div className="font-heading font-black text-amber-400 text-sm">Aadarsh Kumar Raj</div>
                   <div className="text-xs text-slate-300 font-mono">Director (B.Sc., M.Sc., B.Ed), V.N. Public School</div>
                 </div>
@@ -184,4 +173,5 @@ export default function DirectorMessage() {
     </section>
   );
 }
+
 

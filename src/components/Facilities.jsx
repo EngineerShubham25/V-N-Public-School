@@ -2,7 +2,6 @@ import React from 'react';
 import { Monitor, Bus, BookOpen, Sparkles, Trophy, Music, Award, Users, HeartHandshake, ShieldCheck, Dumbbell, Globe, FlaskConical, Target, Heart } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
-import heroBgImg from '../assets/hero_bg.jpg';
 
 export default function Facilities({ onOpenAdmission }) {
   // 6 Primary Visual Feature Cards with Real Photos (No Repetitions)
@@ -104,32 +103,22 @@ export default function Facilities({ onOpenAdmission }) {
   ];
 
   return (
-    <section id="facilities" className="relative py-16 sm:py-20 bg-slate-100 text-slate-900 border-b border-slate-200 font-sans overflow-hidden">
-      
-      {/* Real School Gate Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none scale-105"
-        style={{ backgroundImage: `url(${heroBgImg})` }}
-      ></div>
-
-      {/* Light Clean Overlay */}
-      <div className="absolute inset-0 bg-slate-900/40 pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="facilities" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Trust Banner */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           
-          <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-4 py-1.5 rounded-full text-xs font-black shadow-xs">
+          <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 px-3.5 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs">
             <Heart className="w-3.5 h-3.5 text-orange-600 fill-orange-600" />
             <span>Run by Lalti Virender Charitable Trust (लालती वीरेंद्र चैरिटेबल ट्रस्ट)</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-heading font-black text-white drop-shadow-md tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight">
             School Facilities & Special Programs
           </h2>
 
-          <p className="text-sm text-slate-100 font-medium drop-shadow-sm">
+          <p className="text-sm text-slate-600">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
           </p>
         </div>
@@ -137,7 +126,7 @@ export default function Facilities({ onOpenAdmission }) {
         {/* 1. Primary Photo Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
           {primaryVisualCards.map((fac, idx) => (
-            <div key={idx} className="bg-white/95 border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-orange-500 transition-all duration-300 group flex flex-col cursor-pointer backdrop-blur-xs">
+            <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-orange-400 transition-all duration-300 group flex flex-col cursor-pointer">
               <div className="relative h-48 overflow-hidden bg-slate-100">
                 <img
                   src={fac.image}
@@ -164,7 +153,7 @@ export default function Facilities({ onOpenAdmission }) {
         </div>
 
         {/* 2. All 9 School Facilities Grid (Clean, Detailed, Non-repetitive with Hover Effects) */}
-        <div className="bg-white/95 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg space-y-8 backdrop-blur-xs">
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
           <div className="border-b border-slate-200 pb-4 text-center sm:text-left">
             <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
               Complete Offerings
@@ -216,5 +205,6 @@ export default function Facilities({ onOpenAdmission }) {
     </section>
   );
 }
+
 
 
