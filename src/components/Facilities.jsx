@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music, ChevronDown, ChevronUp } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
 
 export default function Facilities({ onOpenAdmission }) {
   const [showAllFacilities, setShowAllFacilities] = useState(false);
   const [activeFacilityIndex, setActiveFacilityIndex] = useState(null);
+  const [activeVisualIndex, setActiveVisualIndex] = useState(0);
+
+  const handleVisualScroll = (e) => {
+    const container = e.target;
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.clientWidth * 0.75;
+    const index = Math.round(scrollPosition / cardWidth);
+    setActiveVisualIndex(Math.min(Math.max(0, index), primaryVisualCards.length - 1));
+  };
 
   // 6 Primary Visual Feature Cards with Real Photos
   const primaryVisualCards = [
@@ -123,7 +132,10 @@ export default function Facilities({ onOpenAdmission }) {
         </div>
 
         {/* 1. Primary Photo Cards Horizontal Carousel on Mobile & Grid on Desktop */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 pb-4 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+        <div 
+          onScroll={handleVisualScroll}
+          className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pb-2 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0"
+        >
           {primaryVisualCards.map((fac, idx) => (
             <div 
               key={idx} 
@@ -151,6 +163,18 @@ export default function Facilities({ onOpenAdmission }) {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* 6 Dots Carousel Indicator directly below cards (Mobile only) */}
+        <div className="flex justify-center items-center gap-2 mb-10 md:hidden">
+          {primaryVisualCards.map((_, idx) => (
+            <span
+              key={idx}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeVisualIndex === idx ? 'w-6 bg-orange-600' : 'w-2.5 bg-slate-300'
+              }`}
+            />
           ))}
         </div>
 
