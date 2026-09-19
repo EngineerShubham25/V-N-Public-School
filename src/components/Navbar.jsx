@@ -16,8 +16,8 @@ export default function Navbar({ onOpenAdmission }) {
   return (
     <div className="w-full font-sans font-medium text-slate-800">
       
-      {/* Main Navigation Header (Sticky on Scroll) */}
-      <header className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b border-slate-200 ${isScrolled ? 'shadow-md py-2' : 'py-2 sm:py-3'}`}>
+      {/* Main Navigation Header */}
+      <div className={`w-full bg-white transition-all duration-200 border-b border-slate-100 ${isScrolled ? 'py-1.5' : 'py-2 sm:py-2.5'}`}>
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 overflow-hidden w-full">
           
           {/* Logo & School Name */}
@@ -155,7 +155,7 @@ export default function Navbar({ onOpenAdmission }) {
             </div>
           </div>
         )}
-      </header>
+      </div>
 
     </div>
   );

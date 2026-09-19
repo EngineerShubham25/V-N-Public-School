@@ -96,17 +96,6 @@ export default function DirectorMessage() {
                 </div>
               </div>
 
-              {/* Universal View More / View Less Toggle Button (Desktop & Mobile) */}
-              <div className="pt-1">
-                <button
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  className="w-full sm:w-auto bg-blue-900 hover:bg-blue-950 text-white font-bold py-2.5 px-6 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
-                >
-                  <span>{isExpanded ? 'View Less' : 'View More'}</span>
-                  {isExpanded ? <ChevronUp className="w-4 h-4 text-orange-400" /> : <ChevronDown className="w-4 h-4 text-orange-400" />}
-                </button>
-              </div>
-
               {/* Remaining 5 Features (Expanded when View More is clicked) */}
               {isExpanded && (
                 <div className="space-y-3 text-xs sm:text-sm text-slate-700 pt-1 transition-all duration-300">
@@ -166,6 +155,17 @@ export default function DirectorMessage() {
                   </div>
                 </div>
               )}
+
+              {/* Universal View More / View Less Toggle Button (Appears AFTER features: View More when collapsed, View Less at bottom when expanded) */}
+              <div className="pt-1">
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="w-full sm:w-auto bg-blue-900 hover:bg-blue-950 text-white font-bold py-2.5 px-6 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+                >
+                  <span>{isExpanded ? 'View Less' : 'View More'}</span>
+                  {isExpanded ? <ChevronUp className="w-4 h-4 text-orange-400" /> : <ChevronDown className="w-4 h-4 text-orange-400" />}
+                </button>
+              </div>
 
               {/* ALWAYS VISIBLE AT THE BOTTOM: Our Mission Quote Box */}
               <div className="bg-blue-950 text-white p-4 sm:p-6 rounded-2xl space-y-2.5 mt-4 sm:mt-6 shadow-sm relative overflow-hidden">

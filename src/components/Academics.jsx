@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, GraduationCap } from 'lucide-react';
+import { BookOpen, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Academics({ onOpenAdmission }) {
   const grades = [
@@ -24,7 +24,7 @@ export default function Academics({ onOpenAdmission }) {
     <section id="academics" className="py-12 sm:py-16 bg-white border-b border-slate-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 space-y-2">
           <div className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-bold">
             <BookOpen className="w-3.5 h-3.5 text-blue-700" />
             <span>Academic Programs</span>
@@ -33,9 +33,12 @@ export default function Academics({ onOpenAdmission }) {
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
             Classes Offered (Nursery to Class 8th)
           </h2>
-          <p className="text-xs text-slate-500 sm:hidden">
-            👈 Swipe horizontally to view all classes 👉
-          </p>
+
+          <div className="inline-flex items-center gap-1 bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold sm:hidden shadow-2xs">
+            <ChevronLeft className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
+            <span>Swipe cards left & right</span>
+            <ChevronRight className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
+          </div>
         </div>
 
         {/* Mobile Horizontal Swipable Carousel (Right -> Left Swipe) & Desktop 3-Column Grid */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music, ChevronDown, ChevronUp } from 'lucide-react';
+import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import realAssemblyImg from '../assets/real_assembly.jpg';
 import omniVanImg from '../assets/omni_van_gate.jpg';
 
@@ -112,7 +112,7 @@ export default function Facilities({ onOpenAdmission }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 space-y-2">
           <h2 className="text-2xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight">
             School Facilities & Special Programs
           </h2>
@@ -120,6 +120,12 @@ export default function Facilities({ onOpenAdmission }) {
           <p className="text-xs sm:text-sm text-slate-600">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
           </p>
+
+          <div className="inline-flex items-center gap-1 bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold sm:hidden shadow-2xs">
+            <ChevronLeft className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
+            <span>Swipe campus photos left & right</span>
+            <ChevronRight className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
+          </div>
         </div>
 
         {/* 1. Primary Photo Cards Horizontal Carousel on Mobile & Grid on Desktop */}

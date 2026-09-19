@@ -93,17 +93,17 @@ export default function Footer({ onOpenAdmission }) {
                 </a>
               </h3>
               
-              <div className="rounded-xl overflow-hidden border border-slate-700 shadow-md bg-slate-800 h-40 relative">
+              <div className="rounded-xl overflow-hidden border border-slate-700 shadow-md bg-slate-800 h-44 sm:h-40 w-full relative">
                 <iframe
                   title="V.N. Public School Nimuiya Turkauliya Location Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57201.28258380313!2d84.808000!3d26.650000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399334d5885c4b1d%3A0x7d2871f308000000!2sTurkaulia%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
+                  allowFullScreen
+                  loading="eager"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 ></iframe>
               </div>
             </div>
