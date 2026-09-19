@@ -1,27 +1,13 @@
 import React, { useState } from 'react';
-import { Monitor, Bus, BookOpen, Sparkles, Trophy, Music, Award, Users, HeartHandshake, ShieldCheck, Dumbbell, Globe, FlaskConical, Target, Heart } from 'lucide-react';
+import { Monitor, Bus, Award, Users, HeartHandshake, Globe, FlaskConical, Target, Music, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import realAssemblyImg from '../assets/real_assembly.jpg';
+import omniVanImg from '../assets/omni_van_gate.jpg';
 
 export default function Facilities({ onOpenAdmission }) {
-  const [visualActiveIndex, setVisualActiveIndex] = useState(0);
-  const [facilityActiveIndex, setFacilityActiveIndex] = useState(0);
+  const [showAllFacilities, setShowAllFacilities] = useState(false);
+  const [activeFacilityIndex, setActiveFacilityIndex] = useState(null);
 
-  const handleVisualScroll = (e) => {
-    const container = e.target;
-    const scrollPosition = container.scrollLeft;
-    const cardWidth = container.clientWidth * 0.8;
-    const index = Math.round(scrollPosition / cardWidth);
-    setVisualActiveIndex(Math.min(Math.max(0, index), primaryVisualCards.length - 1));
-  };
-
-  const handleFacilityScroll = (e) => {
-    const container = e.target;
-    const scrollPosition = container.scrollLeft;
-    const cardWidth = container.clientWidth * 0.8;
-    const index = Math.round(scrollPosition / cardWidth);
-    setFacilityActiveIndex(Math.min(Math.max(0, index), allFacilitiesList.length - 1));
-  };
-
-  // 6 Primary Visual Feature Cards with Real Photos (No Repetitions)
+  // 6 Primary Visual Feature Cards with Real Photos
   const primaryVisualCards = [
     {
       title: 'School Campus & Entrance Gate',
@@ -30,10 +16,10 @@ export default function Facilities({ onOpenAdmission }) {
       description: 'V.N. Public School campus entrance gate with official banner and welcoming flags in Nimuiya Turkauliya.'
     },
     {
-      title: 'Navodaya, Sainik & Netarhat Coaching',
+      title: 'Book Distribution at School Campus',
       image: '/assets/book_distribution.jpg',
-      badge: 'Entrance Coaching',
-      description: 'Special guidance, weekly mock tests, and mental ability preparation for Navodaya, Sainik, Netarhat & Simultala exams.'
+      badge: 'Academic Materials',
+      description: 'Annual course book and notebook distribution drives ensuring every student receives complete study material.'
     },
     {
       title: 'Smart Class & Computer Lab',
@@ -42,26 +28,26 @@ export default function Facilities({ onOpenAdmission }) {
       description: 'Interactive audio-visual screens and hands-on computer lab practice for digital literacy and coding basics.'
     },
     {
-      title: 'Science Laboratory',
+      title: 'Interactive Classroom Learning',
       image: '/assets/real_classroom.jpg',
-      badge: 'Science Experiments',
-      description: 'Equipped science laboratory models and practical experiment kits for Physics, Chemistry, and Biology.'
+      badge: 'Interactive Teaching',
+      description: 'Engaging interactive classroom environments with experienced teachers encouraging conceptual understanding.'
     },
     {
       title: 'Safe Door-to-Door Van Transport',
-      image: '/assets/omni_van_gate.jpg',
+      image: omniVanImg,
       badge: 'Van Transport',
       description: 'Official Maruti Omni school van covering Nimuiya, Turkaulia Chowk, Semra, Shankar Saraiya & Motihari routes.'
     },
     {
       title: 'Games, Music, Dance & Assembly',
-      image: '/assets/real_assembly.jpg',
+      image: realAssemblyImg,
       badge: 'Co-Curricular',
       description: 'Daily morning prayer assembly, sports, music, rhymes, creative dance, and physical fitness in open lawn.'
     }
   ];
 
-  // Complete List of All 9 Facilities (No duplicates, 100% complete)
+  // Concise & Compact 9 Facilities List (Genuine Data Preserved)
   const allFacilitiesList = [
     {
       icon: Target,
@@ -119,134 +105,163 @@ export default function Facilities({ onOpenAdmission }) {
     }
   ];
 
+  const displayedMobileFacilities = showAllFacilities ? allFacilitiesList : allFacilitiesList.slice(0, 3);
+
   return (
-    <section id="facilities" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 font-sans">
+    <section id="facilities" className="py-12 sm:py-16 bg-slate-50 border-b border-slate-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with Trust Banner */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          
-          <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 px-3.5 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs">
-            <Heart className="w-3.5 h-3.5 text-orange-600 fill-orange-600" />
-            <span>Run by Lalti Virender Charitable Trust (लालती वीरेंद्र चैरिटेबल ट्रस्ट)</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 space-y-2">
+          <h2 className="text-2xl sm:text-4xl font-heading font-black text-blue-950 tracking-tight">
             School Facilities & Special Programs
           </h2>
 
-          <p className="text-sm text-slate-600">
+          <p className="text-xs sm:text-sm text-slate-600">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
           </p>
+
+          <div className="inline-flex items-center gap-1 bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold sm:hidden shadow-2xs">
+            <ChevronLeft className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
+            <span>Swipe campus photos left & right</span>
+            <ChevronRight className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
+          </div>
         </div>
 
-        {/* 1. Primary Photo Cards Grid (Responsive Grid on Desktop / Touch Carousel on Mobile) */}
-        <div className="mb-14">
-          <div 
-            onScroll={handleVisualScroll}
-            className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2"
-          >
-            {primaryVisualCards.map((fac, idx) => (
-              <div 
-                key={idx} 
-                className="min-w-[85vw] md:min-w-0 snap-center shrink-0 bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col"
-              >
-                <div className="relative h-48 overflow-hidden bg-slate-100">
-                  <img
-                    src={fac.image}
-                    alt={fac.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-3 left-3 bg-blue-900 text-white px-2.5 py-0.5 rounded text-[11px] font-bold shadow">
-                    {fac.badge}
-                  </span>
-                </div>
+        {/* 1. Primary Photo Cards Horizontal Carousel on Mobile & Grid on Desktop */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 pb-4 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+          {primaryVisualCards.map((fac, idx) => (
+            <div 
+              key={idx} 
+              className="w-[84%] sm:w-[320px] shrink-0 snap-center md:w-auto bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 group flex flex-col"
+            >
+              <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-100">
+                <img
+                  src={fac.image}
+                  alt={fac.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-2.5 left-2.5 bg-blue-900 text-white px-2 py-0.5 rounded text-[10px] font-bold shadow-xs">
+                  {fac.badge}
+                </span>
+              </div>
 
-                <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-base font-bold text-blue-950 group-hover:text-blue-700 transition-colors">
-                      {fac.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                      {fac.description}
-                    </p>
-                  </div>
+              <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-blue-950 group-hover:text-orange-600 transition-colors">
+                    {fac.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mt-1">
+                    {fac.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Mobile Pagination Dots */}
-          <div className="flex justify-center items-center gap-1.5 mt-3 md:hidden">
-            {primaryVisualCards.map((_, idx) => (
-              <span
-                key={idx}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  visualActiveIndex === idx ? 'w-5 bg-blue-900' : 'w-2 bg-slate-300'
-                }`}
-              />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* 2. All 9 School Facilities Grid */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
-            <div>
-              <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
-                Complete Offerings
-              </span>
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-blue-950">
-                All Facilities & Key Programs Included
-              </h3>
-            </div>
-            <button
-              onClick={onOpenAdmission}
-              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-4.5 py-2.5 rounded-xl text-xs shadow-sm transition-all"
-            >
-              Apply for Admission
-            </button>
+        {/* 2. All 9 School Facilities Section (Mobile: 3 Cards Initial + View More/Less & Tap-to-Expand, Desktop: All 9 Grid) */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-4 sm:p-8 shadow-xs space-y-6">
+          <div className="border-b border-slate-200 pb-3 text-center sm:text-left">
+            <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wider block mb-0.5">
+              Complete Offerings
+            </span>
+            <h3 className="text-lg sm:text-2xl font-heading font-black text-blue-950">
+              All Facilities & Key Programs Included
+            </h3>
           </div>
 
-          <div 
-            onScroll={handleFacilityScroll}
-            className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2"
-          >
+          {/* Desktop View: All 9 Facilities Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {allFacilitiesList.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div 
                   key={idx} 
-                  className="min-w-[85vw] md:min-w-0 snap-center shrink-0 bg-slate-50 p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all space-y-2.5 flex flex-col justify-between"
+                  className="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-white transition-all space-y-2 flex flex-col justify-between group"
                 >
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0">
-                        <Icon className="w-5 h-5 text-blue-800" />
+                      <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center border border-blue-200 shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                        <Icon className="w-4 h-4 text-blue-800 group-hover:text-white transition-colors" />
                       </div>
-                      <span className="text-[10px] bg-blue-900 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                      <span className="text-[10px] bg-blue-900 group-hover:bg-orange-600 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider transition-colors">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-blue-950 pt-1">{item.title}</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-xs sm:text-sm font-bold text-blue-950 group-hover:text-orange-600 transition-colors pt-0.5">{item.title}</h4>
+                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Mobile Pagination Dots for All Facilities List */}
-          <div className="flex justify-center items-center gap-1.5 mt-3 md:hidden">
-            {allFacilitiesList.map((_, idx) => (
-              <span
-                key={idx}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  facilityActiveIndex === idx ? 'w-5 bg-blue-900' : 'w-2 bg-slate-300'
-                }`}
-              />
-            ))}
+          {/* Mobile View: First 3 Cards initially (or 9 when expanded) with Tap-to-Expand Accordion */}
+          <div className="sm:hidden space-y-3">
+            <div className="space-y-3">
+              {displayedMobileFacilities.map((item, idx) => {
+                const Icon = item.icon;
+                const isActive = activeFacilityIndex === idx;
+                return (
+                  <div 
+                    key={idx}
+                    onClick={() => setActiveFacilityIndex(isActive ? null : idx)}
+                    className={`p-4 rounded-2xl border transition-all cursor-pointer space-y-2 ${
+                      isActive 
+                        ? 'border-orange-500 bg-orange-50/40 ring-2 ring-orange-500/20 shadow-md' 
+                        : 'border-slate-200 bg-slate-50 hover:bg-white shadow-xs'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 ${
+                          isActive ? 'bg-orange-600 text-white border-orange-600' : 'bg-blue-100 text-blue-900 border-blue-200'
+                        }`}>
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <h4 className="text-xs font-bold text-blue-950 pr-2">{item.title}</h4>
+                      </div>
+
+                      <span className={`text-[9px] px-2 py-0.5 rounded font-bold uppercase tracking-wider shrink-0 ${
+                        isActive ? 'bg-orange-600 text-white' : 'bg-blue-900 text-white'
+                      }`}>
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    <p className="text-[11px] text-slate-600 leading-relaxed pt-1 border-t border-slate-200/60">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Mobile View More / View Less Facilities Toggle Button */}
+            <div className="pt-2">
+              <button
+                onClick={() => setShowAllFacilities(!showAllFacilities)}
+                className="w-full bg-blue-950 hover:bg-blue-900 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+              >
+                <span>{showAllFacilities ? 'View Less Facilities' : 'View More Facilities'}</span>
+                {showAllFacilities ? <ChevronUp className="w-4 h-4 text-orange-400" /> : <ChevronDown className="w-4 h-4 text-orange-400" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom Center CTA */}
+          <div className="pt-3 border-t border-slate-200 text-center flex flex-col items-center justify-center space-y-2">
+            <p className="text-xs text-slate-600 font-medium">
+              Ready to give your child quality education and holistic development at V.N. Public School?
+            </p>
+            <button
+              onClick={onOpenAdmission}
+              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer"
+            >
+              <span>Apply for Admission (2026-27)</span>
+            </button>
           </div>
 
         </div>
@@ -255,3 +270,8 @@ export default function Facilities({ onOpenAdmission }) {
     </section>
   );
 }
+
+
+
+
+
