@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950 overflow-x-hidden w-full max-w-full">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950 overflow-x-clip w-full max-w-full">
       {/* Unified Sticky Navigation Header & Notice Board Ticker */}
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs">
         <Navbar 

@@ -120,12 +120,6 @@ export default function Facilities({ onOpenAdmission }) {
           <p className="text-xs sm:text-sm text-slate-600">
             Nursery to Class 8th (English Medium - CBSE Pattern) with complete entrance coaching & modern amenities.
           </p>
-
-          <div className="inline-flex items-center gap-1 bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold sm:hidden shadow-2xs">
-            <ChevronLeft className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
-            <span>Swipe campus photos left & right</span>
-            <ChevronRight className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
-          </div>
         </div>
 
         {/* 1. Primary Photo Cards Horizontal Carousel on Mobile & Grid on Desktop */}

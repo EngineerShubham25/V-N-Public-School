@@ -1,7 +1,17 @@
-import React from 'react';
-import { BookOpen, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { BookOpen, GraduationCap } from 'lucide-react';
 
 export default function Academics({ onOpenAdmission }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = (e) => {
+    const container = e.target;
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.clientWidth * 0.75;
+    const index = Math.round(scrollPosition / cardWidth);
+    setActiveIndex(Math.min(Math.max(0, index), grades.length - 1));
+  };
+
   const grades = [
     {
       title: 'Pre-Primary (Nursery, LKG, UKG)',
@@ -33,16 +43,13 @@ export default function Academics({ onOpenAdmission }) {
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
             Classes Offered (Nursery to Class 8th)
           </h2>
-
-          <div className="inline-flex items-center gap-1 bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold sm:hidden shadow-2xs">
-            <ChevronLeft className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
-            <span>Swipe cards left & right</span>
-            <ChevronRight className="w-3.5 h-3.5 text-orange-600 animate-pulse shrink-0" />
-          </div>
         </div>
 
-        {/* Mobile Horizontal Swipable Carousel (Right -> Left Swipe) & Desktop 3-Column Grid */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-4 pb-4 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+        {/* Mobile Horizontal Swipable Carousel & Desktop 3-Column Grid */}
+        <div 
+          onScroll={handleScroll}
+          className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-4 pb-2 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0"
+        >
           {grades.map((g, idx) => (
             <div 
               key={idx} 
@@ -65,6 +72,18 @@ export default function Academics({ onOpenAdmission }) {
                 <span>Apply for Admission</span>
               </button>
             </div>
+          ))}
+        </div>
+
+        {/* Carousel Indicator Dots directly below cards */}
+        <div className="flex justify-center items-center gap-2 mt-4 md:hidden">
+          {grades.map((_, idx) => (
+            <span
+              key={idx}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeIndex === idx ? 'w-6 bg-orange-600' : 'w-2.5 bg-slate-300'
+              }`}
+            />
           ))}
         </div>
 
