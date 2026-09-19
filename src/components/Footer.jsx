@@ -86,10 +86,10 @@ export default function Footer({ onOpenAdmission }) {
               <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2 mb-3 flex items-center justify-between">
                 <span>School Location Map</span>
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Turkaulia+East+Champaran+Bihar+845437" 
+                  href="https://www.google.com/maps/search/?api=1&query=V.N.+Public+School+Nimuiya+Turkauliya+East+Champaran+Bihar+845437" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-xs text-orange-400 hover:underline flex items-center gap-1 font-normal uppercase"
+                  className="text-xs text-orange-400 hover:underline flex items-center gap-1 font-semibold uppercase"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Directions</span>
@@ -98,8 +98,8 @@ export default function Footer({ onOpenAdmission }) {
               
               <div className="rounded-xl overflow-hidden border border-slate-700 shadow-md bg-slate-800 h-44 relative">
                 <iframe
-                  title="V.N. Public School Nimuiya Turkauliya Google Maps Location"
-                  src="https://maps.google.com/maps?q=Turkaulia,East+Champaran,Bihar+845437&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  title="V.N. Public School Nimuiya Turkauliya Location Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57201.28258380313!2d84.808000!3d26.650000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399334d5885c4b1d%3A0x7d2871f308000000!2sTurkaulia%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -109,9 +109,15 @@ export default function Footer({ onOpenAdmission }) {
                   className="w-full h-full hover:scale-105 transition-transform duration-500"
                 ></iframe>
               </div>
-              <p className="text-[11px] text-slate-400 text-center mt-2">
-                📍 Tap map or Directions for turn-by-turn navigation
-              </p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=V.N.+Public+School+Nimuiya+Turkauliya+East+Champaran+Bihar+845437"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2.5 w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all text-center block"
+              >
+                <Navigation className="w-3.5 h-3.5" />
+                <span>🗺️ Open Location in Google Maps App</span>
+              </a>
             </div>
           </div>
 

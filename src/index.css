@@ -10,10 +10,16 @@
     --amber-primary: #f59e0b;
   }
 
-  body {
+  html, body, #root {
     font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
     background-color: #f8fafc;
     color: #0f172a;
+    max-width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
     overflow-x: hidden;
   }
 

@@ -17,20 +17,20 @@ export default function Navbar({ onOpenAdmission }) {
     <div className="w-full font-sans font-medium text-slate-800">
       
       {/* Main Navigation Header (Sticky on Scroll) */}
-      <header className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b border-slate-200 ${isScrolled ? 'shadow-md py-2.5' : 'py-3.5'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <header className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b border-slate-200 ${isScrolled ? 'shadow-md py-2' : 'py-2.5 sm:py-3.5'}`}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 overflow-hidden w-full">
           
           {/* Logo & School Name */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group">
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blue-900 border-2 border-orange-500 p-1 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+          <a href="#" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 group">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-blue-900 border-2 border-orange-500 p-0.5 sm:p-1 flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
               <img src="/assets/logo-badge.svg" alt="V.N. Public School Crest Logo" className="w-full h-full object-contain" />
             </div>
-            <div>
-              <span className="font-heading font-black text-xl sm:text-2xl text-blue-950 tracking-tight leading-none block group-hover:text-orange-600 transition-colors">
+            <div className="min-w-0 flex-1">
+              <span className="font-heading font-black text-base sm:text-2xl text-blue-950 tracking-tight leading-none block group-hover:text-orange-600 transition-colors truncate">
                 V.N. PUBLIC SCHOOL
               </span>
-              <p className="text-xs text-slate-500 font-medium tracking-normal mt-0.5">
-                Nimuiya Turkauliya, East Champaran (845437)
+              <p className="text-[10px] sm:text-xs text-slate-500 font-medium tracking-normal mt-0.5 truncate">
+                Nimuiya Turkauliya, East Champaran
               </p>
             </div>
           </a>
@@ -64,19 +64,20 @@ export default function Navbar({ onOpenAdmission }) {
             </button>
           </div>
 
-          {/* Mobile Header Row */}
-          <div className="lg:hidden flex items-center gap-2.5">
+          {/* Mobile Header Controls: Always Visible Apply Button + Hamburger Menu Button */}
+          <div className="lg:hidden flex items-center gap-1.5 shrink-0">
             <button
               onClick={onOpenAdmission}
-              className="bg-orange-600 text-white font-bold px-3.5 py-2 rounded-lg text-xs flex items-center gap-1 shadow-xs"
+              className="bg-orange-600 text-white font-bold px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-1 shadow-xs whitespace-nowrap"
             >
-              Apply Online
+              <span>Apply</span>
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300"
+              className="p-1.5 rounded-lg bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300 shrink-0"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-slate-900" /> : <Menu className="w-5 h-5 text-slate-900" />}
             </button>
           </div>
 
