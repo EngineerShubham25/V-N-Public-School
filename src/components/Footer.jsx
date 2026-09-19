@@ -106,15 +106,6 @@ export default function Footer({ onOpenAdmission }) {
                   className="w-full h-full hover:scale-105 transition-transform duration-500"
                 ></iframe>
               </div>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=V.N.+Public+School+Nimuiya+Turkauliya+East+Champaran+Bihar+845437"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2.5 w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all text-center block"
-              >
-                <Navigation className="w-3.5 h-3.5" />
-                <span>Get Directions on Google Maps</span>
-              </a>
             </div>
           </div>
 

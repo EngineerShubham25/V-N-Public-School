@@ -39,7 +39,7 @@ export default function DirectorMessage() {
                 </div>
               </div>
 
-              {/* Direct Contact Button */}
+              {/* Direct Contact Button - Cleanly positioned */}
               <div className="mt-3 max-w-sm mx-auto lg:max-w-none">
                 <a
                   href="tel:7562858494"
@@ -51,8 +51,8 @@ export default function DirectorMessage() {
               </div>
             </div>
 
-            {/* Right Side: Message & Structured Points (Collapsible on Mobile) */}
-            <div className="lg:col-span-8 space-y-4 sm:space-y-6">
+            {/* Right Side: Message, Initial 2 Features, View More Toggle & Permanent Mission Box */}
+            <div className="lg:col-span-8 space-y-4 sm:space-y-5">
               
               {/* Headline Quote */}
               <div className="border-l-4 border-orange-500 pl-3 sm:pl-4 py-1">
@@ -71,20 +71,8 @@ export default function DirectorMessage() {
                 </p>
               </div>
 
-              {/* Mobile View More / View Less Toggle Button */}
-              <div className="sm:hidden pt-1">
-                <button
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  className="w-full bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
-                >
-                  <span>{isExpanded ? 'View Less' : 'View Full Director Message'}</span>
-                  {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </button>
-              </div>
-
-              {/* Detailed Points (Always visible on Desktop, Collapsible on Mobile) */}
-              <div className={`${isExpanded ? 'block' : 'hidden sm:block'} space-y-4 text-xs sm:text-sm text-slate-700 pt-2`}>
-                
+              {/* Initial 2 Features Always Visible (Desktop & Mobile) */}
+              <div className="space-y-3 text-xs sm:text-sm text-slate-700 pt-1">
                 {/* 1. Our Vision */}
                 <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
@@ -96,7 +84,7 @@ export default function DirectorMessage() {
                   </p>
                 </div>
 
-                {/* 2. Academic Excellence & Entrance Exam Prep */}
+                {/* 2. Academic Excellence & Special Exam Coaching */}
                 <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
                   <h4 className="font-bold text-blue-950 flex items-center gap-2">
                     <BookOpen className="w-4 h-4 text-blue-700 shrink-0" />
@@ -106,74 +94,89 @@ export default function DirectorMessage() {
                     Special preparation for competitive examinations like <strong>Jawahar Navodaya Vidyalaya, Netarhat, Sainik School, and Simultala Awasiya Vidyalaya</strong> alongside regular CBSE English Medium syllabus.
                   </p>
                 </div>
+              </div>
 
-                {/* 3. Safety & Well-being */}
-                <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
-                  <h4 className="font-bold text-blue-950 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0" />
-                    <span>Safety & Well-being</span>
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-6">
-                    The safety and well-being of every child is our highest priority in a secure, disciplined, caring, and child-friendly campus.
-                  </p>
-                </div>
+              {/* Universal View More / View Less Toggle Button (Desktop & Mobile) */}
+              <div className="pt-1">
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="w-full sm:w-auto bg-blue-900 hover:bg-blue-950 text-white font-bold py-2.5 px-6 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+                >
+                  <span>{isExpanded ? 'View Less' : 'View More'}</span>
+                  {isExpanded ? <ChevronUp className="w-4 h-4 text-orange-400" /> : <ChevronDown className="w-4 h-4 text-orange-400" />}
+                </button>
+              </div>
 
-                {/* 4. Holistic Development */}
-                <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
-                  <h4 className="font-bold text-blue-950 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-blue-700 shrink-0" />
-                    <span>Holistic Development</span>
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-6">
-                    Sports, music, dance classes, Sanskrit/Urdu language exposure, leadership, and teamwork activities.
-                  </p>
-                </div>
+              {/* Remaining 5 Features (Expanded when View More is clicked) */}
+              {isExpanded && (
+                <div className="space-y-3 text-xs sm:text-sm text-slate-700 pt-1 transition-all duration-300">
+                  {/* 3. Safety & Well-being */}
+                  <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
+                    <h4 className="font-bold text-blue-950 flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0" />
+                      <span>Safety & Well-being</span>
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                      The safety and well-being of every child is our highest priority in a secure, disciplined, caring, and child-friendly campus.
+                    </p>
+                  </div>
 
-                {/* 5. Technology & Future-Ready Learning */}
-                <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
-                  <h4 className="font-bold text-blue-950 flex items-center gap-2">
-                    <Award className="w-4 h-4 text-blue-700 shrink-0" />
-                    <span>Technology & Future-Ready Learning</span>
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-6">
-                    Integration of digital smart classes, computer lab, science practicals, and skill workshops.
-                  </p>
-                </div>
+                  {/* 4. Holistic Development */}
+                  <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
+                    <h4 className="font-bold text-blue-950 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-blue-700 shrink-0" />
+                      <span>Holistic Development</span>
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                      Sports, music, dance classes, Sanskrit/Urdu language exposure, leadership, and teamwork activities.
+                    </p>
+                  </div>
 
-                {/* 6. Values & Character Building */}
-                <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
-                  <h4 className="font-bold text-blue-950 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-700 shrink-0" />
-                    <span>Values & Character Building</span>
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-6">
-                    Focus on discipline, honesty, respect, empathy, and special remedial guidance for weak students.
-                  </p>
-                </div>
+                  {/* 5. Technology & Future-Ready Learning */}
+                  <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
+                    <h4 className="font-bold text-blue-950 flex items-center gap-2">
+                      <Award className="w-4 h-4 text-blue-700 shrink-0" />
+                      <span>Technology & Future-Ready Learning</span>
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                      Integration of digital smart classes, computer lab, science practicals, and skill workshops.
+                    </p>
+                  </div>
 
-                {/* 7. Parent–School Partnership */}
-                <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
-                  <h4 className="font-bold text-blue-950 flex items-center gap-2">
-                    <HeartHandshake className="w-4 h-4 text-blue-700 shrink-0" />
-                    <span>Parent–School Partnership</span>
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-6">
-                    Strong collaboration between parents and teachers to support every child's academic and personal growth.
-                  </p>
-                </div>
+                  {/* 6. Values & Character Building */}
+                  <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
+                    <h4 className="font-bold text-blue-950 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-blue-700 shrink-0" />
+                      <span>Values & Character Building</span>
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                      Focus on discipline, honesty, respect, empathy, and special remedial guidance for weak students.
+                    </p>
+                  </div>
 
-                {/* Closing Quote Box */}
-                <div className="bg-blue-950 text-white p-4 sm:p-6 rounded-2xl space-y-2.5 mt-4 shadow-sm relative overflow-hidden">
-                  <Quote className="w-8 h-8 text-orange-400 opacity-20 absolute right-3 bottom-3" />
-                  <p className="text-xs sm:text-sm font-medium italic text-slate-100 leading-relaxed">
-                    “Our mission is simple — to provide every child with the knowledge to succeed, the values to lead, and the confidence to dream.”
-                  </p>
-                  <div className="border-t border-blue-900 pt-2">
-                    <div className="font-heading font-black text-amber-400 text-xs sm:text-sm">Aadarsh Kumar Raj</div>
-                    <div className="text-[11px] text-slate-300 font-mono">Director (B.Sc., M.Sc., B.Ed), V.N. Public School</div>
+                  {/* 7. Parent–School Partnership */}
+                  <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-1">
+                    <h4 className="font-bold text-blue-950 flex items-center gap-2">
+                      <HeartHandshake className="w-4 h-4 text-blue-700 shrink-0" />
+                      <span>Parent–School Partnership</span>
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                      Strong collaboration between parents and teachers to support every child's academic and personal growth.
+                    </p>
                   </div>
                 </div>
+              )}
 
+              {/* ALWAYS VISIBLE AT THE BOTTOM: Our Mission Quote Box */}
+              <div className="bg-blue-950 text-white p-4 sm:p-6 rounded-2xl space-y-2.5 mt-4 sm:mt-6 shadow-sm relative overflow-hidden">
+                <Quote className="w-8 h-8 text-orange-400 opacity-20 absolute right-3 bottom-3" />
+                <p className="text-xs sm:text-sm font-medium italic text-slate-100 leading-relaxed">
+                  “Our mission is simple — to provide every child with the knowledge to succeed, the values to lead, and the confidence to dream.”
+                </p>
+                <div className="border-t border-blue-900 pt-2">
+                  <div className="font-heading font-black text-amber-400 text-xs sm:text-sm">Aadarsh Kumar Raj</div>
+                  <div className="text-[11px] text-slate-300 font-mono">Director (B.Sc., M.Sc., B.Ed), V.N. Public School</div>
+                </div>
               </div>
 
             </div>
@@ -185,6 +188,7 @@ export default function DirectorMessage() {
     </section>
   );
 }
+
 
 
 
