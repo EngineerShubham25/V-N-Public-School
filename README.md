@@ -1,95 +1,115 @@
-# 👑 Biryani Mehfil - React Web Application
+# V.N. Public School Website
 
-> **Healthy. Hygienic. Delicious. | Bangali Colony Chowk, Bettiah**
+A modern, responsive, and user-friendly official website developed for **V.N. Public School** to provide students, parents, and visitors with easy access to school information, academic details, facilities, admissions, and contact information.
 
-A premium, fully responsive, dark-gold themed static React web application for **Biryani Mehfil** restaurant located at Bangali Colony Chowk, Bettiah, Bihar.
+The website is designed with a clean and professional interface that works smoothly across **desktop, tablet, and mobile devices**, with responsive layouts, interactive sections, carousels, animations, and accessible navigation.
 
-![Biryani Mehfil Logo](public/assets/logo.jpg)
+## ✨ Key Features
 
----
+* 🏫 **Modern School Website** – Professional and visually appealing design representing the school's identity.
+* 📱 **Fully Responsive Design** – Optimized for desktop, tablet, and mobile screen sizes.
+* 🧭 **Responsive Navigation** – Easy navigation across all major sections of the website.
+* 🎓 **About the School** – Information about the school's vision, mission, values, and educational approach.
+* 👨‍🏫 **Director's Message** – Dedicated section for the Director's message with responsive "View More" functionality.
+* 📚 **Academic Excellence** – Highlights the school's academic approach and special examination preparation.
+* 🏆 **Special Programs** – Dedicated section showcasing special academic and extracurricular programs.
+* 🏫 **School Facilities** – Interactive facilities section presenting the facilities available for students.
+* 🖼️ **School Gallery** – Visual presentation of the school's campus and activities.
+* 📝 **Online Admission Form** – Interactive admission enquiry/application form for prospective students.
+* 🎉 **Interactive Animations** – Confetti animation for successful admission form submission and special interactions.
+* 📍 **Location & Contact Information** – Easy access to school address and contact details.
+* 🗺️ **Google Maps Integration** – Location information with direct map access.
+* 📞 **Quick Contact Options** – Convenient access to phone and other contact information.
+* 📱 **Mobile Carousels** – Touch-friendly horizontal card sliders for better mobile browsing.
+* 🔵 **Pagination Indicators** – Visual indicators for carousel sections to show the currently active card.
+* ✨ **Modern UI Effects** – Smooth transitions, glassmorphism elements, typography, and interactive hover effects.
+* ⚡ **Fast Performance** – Built with Vite for a fast development experience and optimized production builds.
 
-## 🌟 Key Features
+## 🛠️ Tech Stack
 
-- 🍲 **Authentic Menu & Rates**: Complete filterable menu featuring Chicken Dum Biryani, Kolkata Biryani Chef's Special, Dum Aaloo Biryani, Egg Biryani, Hot Steamed & Fried Momos, Raita, Salan Gravy, and Add-ons.
-- 🛒 **Interactive Order Cart**: Slide-out cart supporting Home Delivery, Takeaway, and Dine-in table reservations with itemized GST bill calculation.
-- 💬 **WhatsApp Direct Ordering**: One-click checkout that generates a pre-formatted itemized order message sent directly to **`+91 7097039425`**.
-- 💳 **UPI Payment Gateway**: Built-in interactive scan-and-pay UPI QR code modal (PhonePe / Google Pay).
-- 📍 **Outlet Location & Directions**: Bangali Colony Chowk, Bettiah with embedded interactive Google Maps iframe and one-tap directions.
-- 🛵 **Real-time Order Delivery Tracker**: Simulated live delivery tracking timeline with interactive driver route animation.
-- 🎉 **Party & Bulk Event Catering**: Customized catering request form for family events, birthdays, and festivals.
+### Frontend & UI
 
----
+* **React 18** – Used to build the modern single-page application (SPA).
+* **Tailwind CSS v3** – Used for responsive layouts, custom styling, mobile carousels, glassmorphism UI, transitions, and typography.
+* **Lucide React** – Used for clean and scalable SVG icons such as phone, location, map, graduation cap, and other interface icons.
+* **Canvas Confetti** – Used for celebratory animations during successful admission form submissions and special interactions.
 
-## 📸 Menu Items & Rates
+### Build Tool & Bundler
 
-| Dish / Category | Portion | Rate |
-| :--- | :--- | :--- |
-| **Authentic Chicken Dum Biryani** | 750g onwards | ₹70 |
-| **Kolkata Biryani (Chef's Special)** | Full Plate (800g) | ₹80 |
-| **Egg Dum Biryani** | Full Plate (2 Eggs) | ₹80 |
-| **Dum Aaloo Biryani** | Full Plate | ₹70 |
-| **Garden Veg Dum Biryani** | Half / Budget Plate | ₹40 |
-| **Chicken Steamed Momos** | 8 Pieces | ₹80 |
-| **Chicken Crispy Fried Momos** | 8 Pieces | ₹90 |
-| **Veg Steamed Momos** | 8 Pieces | ₹50 |
-| **Veg Crispy Fried Momos** | 8 Pieces | ₹60 |
-| **Extra Dum Basmati Rice** | 1 Portion | ₹30 |
-| **Special Cucumber Mint Raita** | 1 Bowl | ₹30 |
-| **Spicy Biryani Salan Gravy** | 1 Bowl | ₹30 |
-| **Extra Boiled Egg / Spiced Aaloo** | Per Piece | ₹30 |
-| **Mehfil Special Combo Feast** | Biryani + 4 Momos + Drink | ₹140 |
+* **Vite 5** – Used as the development server and build tool with fast Hot Module Replacement (HMR) and optimized production builds.
 
----
+### Hosting, Deployment & Version Control
 
-## 🚀 Getting Started
+* **Vercel** – Used for hosting, HTTPS, global CDN delivery, and automatic deployment.
+* **Git** – Used for source-code version control.
+* **GitHub** – Used for repository management and collaboration.
 
-### Prerequisites
+## 📂 Main Website Sections
 
-Ensure you have [Node.js](https://nodejs.org/) (v18+) installed.
+The website includes dedicated sections for:
 
-### Installation
+* Home
+* About Us
+* Vision & Mission
+* Director's Message
+* Academic Excellence
+* Special Exam Coaching
+* School Facilities
+* Special Programs
+* Gallery
+* Admissions
+* Contact & Location
 
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/biryani-mehfil.git
+## 📱 Responsive Experience
 
-# Navigate to project directory
-cd biryani-mehfil
+The website follows a responsive-first approach to provide a consistent experience across different devices.
 
-# Install dependencies
-npm install
+### Desktop
 
-# Start local development server
-npm run dev
-```
+* Spacious multi-column layouts
+* Interactive cards
+* Professional navigation
+* Optimized content presentation
 
-The application will be accessible at `http://localhost:3000`.
+### Mobile
 
-### Building for Production
+* Mobile-friendly navigation
+* Touch-enabled card carousels
+* Pagination dots
+* Responsive typography
+* Optimized spacing and layouts
+* Easy access to admission and contact information
 
-```bash
-# Generate production bundle in dist/
-npm run build
+## 🚀 Deployment
 
-# Preview production build locally
-npm run preview
-```
+The project is deployed using **Vercel** with GitHub-based continuous deployment.
 
----
+Every update pushed to the connected GitHub repository can be automatically built and deployed through Vercel.
 
-## 🛠️ Built With
+### Live Website
 
-- **React 18** - UI Library
-- **Vite 5** - Lightning-fast build tool
-- **Tailwind CSS** - Modern Utility-First Styling
-- **Lucide React** - High quality icon pack
-- **Canvas Confetti** - Celebration animations
+**V.N. Public School:**
+https://v-n-public-school.vercel.app/
 
----
+### GitHub Repository
 
-## 📍 Contact & Hotline
+https://github.com/EngineerShubham25/V-N-Public-School
 
-- **Address**: Bangali Colony Chowk, Bettiah, Bihar - 845438
-- **Order Hotline**: [+91 7097039425](tel:+917097039425)
-- **WhatsApp**: [+91 7097039425](https://wa.me/917097039425)
-- **Timings**: 11:00 AM - 10:30 PM (Mon - Sun)
+## 🎯 Project Objective
+
+The primary objective of this project is to create a **professional digital presence for V.N. Public School** and make important school information easily accessible to students, parents, and visitors.
+
+The website focuses on:
+
+* Better information accessibility
+* Professional school branding
+* Mobile-first usability
+* Easy admission enquiries
+* Clear presentation of academic programs and facilities
+* Improved communication between the school and prospective parents/students
+* Fast and responsive browsing experience
+
+## 👨‍💻 Developed With
+
+Built using modern frontend technologies with a focus on **responsive design, reusable React components, clean UI, accessibility, and user experience**.
+
